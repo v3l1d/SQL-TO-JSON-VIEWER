@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/', 'fileUploadController@upload');
+Route::get('/', 'fileUploadController@upload');
 
