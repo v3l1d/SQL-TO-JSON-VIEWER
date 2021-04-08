@@ -1,9 +1,10 @@
 <?php
-   
+
 namespace App\Http\Controllers;
-  
+
 use Illuminate\Http\Request;
-  
+use Symfony\Component\Process\Process;
+
 class FileUploadController extends Controller
 {
     /**
@@ -11,29 +12,25 @@ class FileUploadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function fileUpload()
-    {
+    public function fileUpload(){
         return view('fileUpload');
     }
-  
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function fileUploadPost(Request $request)
     {
         $request->validate([
-            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+            'file' => 'required|mimes:txt,sql'
         ]);
-  
-        $fileName = time().'.'.$request->file->extension();  
-   
-        $request->file->move(public_path('uploads'), $fileName);
-   
-        return back()
-            ->with('success','You have successfully upload file.')
-            ->with('file',$fileName);
-   
-    }
+
+        $filename = $request->file->getClientOriginalName();
+        $request->file->storeAs('uploads', $filename);  
+        
+        return view('fileUpload');
+}
 }

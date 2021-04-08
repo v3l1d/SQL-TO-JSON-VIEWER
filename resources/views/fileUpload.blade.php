@@ -4,15 +4,9 @@
 <html lang="en">
 
 <head>
-
-
-
 </head>
 
-
 <body>
-
-
 
     <!--Uploader-->
     <div class="uploader center">
