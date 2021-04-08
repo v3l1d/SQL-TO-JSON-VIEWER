@@ -1,14 +1,20 @@
 const port = 3000;
-var express = require('express')
-var fs = require('fs')
-const { Parser } = require('sql-ddl-to-json-schema');
+var express = require("express");
+var fs = require("fs");
+const { Parser } = require("sql-ddl-to-json-schema");
+const { getLatestFileName } = require("./resources/js/fileNameController");
 
-const parser = new Parser('mysql');
-var app = express()
+const parser = new Parser("mysql");
+var app = express();
 
+app.get("/", function(req, res) {
+    let latestFile = getLatestFileName();
 
-app.get('/', function(req, res) {
-    fs.readFile('./storage/app/uploads/TestTables.sql' + req.query.file, 'utf8', function (err,sql) {
+    //  fs.readFile('./storage/app/uploads/TestTables.sql' + req.query.file, 'utf8', function (err,sql) {
+    fs.readFile("./storage/app/uploads/" + latestFile, "utf8", function(
+        err,
+        sql
+    ) {
         console.log(req.query.file);
         if (err) {
             return console.log(err);
@@ -22,14 +28,16 @@ app.get('/', function(req, res) {
         for (var elem in compactJsonTablesArray) {
             console.log(JSON.stringify(elem));
         }
-        res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+        res.writeHead(200, {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        });
         res.end(JSON.stringify(compactJsonTablesArray));
     });
-    var file = req.query.file
+    var file = req.query.file;
     //res.send(file);
-})
-
+});
 
 app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`)
-})
+    console.log(`Server listening at http://localhost:${port}`);
+});
