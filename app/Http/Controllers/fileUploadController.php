@@ -29,8 +29,8 @@ class FileUploadController extends Controller
         ]);
 
         $filename = $request->file->getClientOriginalName();
-        $request->file->storeAs('uploads', $filename);  
-        
-        return view('fileUpload');
+        $request->file->storeAs('uploads', $filename);
+
+        return view('visualize');
 }
 }
