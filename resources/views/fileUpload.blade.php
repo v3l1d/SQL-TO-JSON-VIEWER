@@ -21,7 +21,8 @@
                 <form action="{{ route('file.upload.post') }}" method="POST" enctype="multipart/form-data">
                   @csrf
 
-                            <button type="submit" class="btn btn-success uploaderBtn"><input type="file" name="file" class="form-control">Upload</button>
+                            <input type="file" name="file" class="custom-file-input">
+                            <button type="submit" class="btn btn-success uploaderBtn">Upload</button>
 
 
                       </form>
