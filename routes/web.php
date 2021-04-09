@@ -13,5 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'FileUploadController@fileUpload')->name('file.upload');
-Route::post('/', 'FileUploadController@fileUploadPost')->name('file.upload.post');
+Route::get('/', 'fileUploadController@fileUpload')->name('file.upload');
+Route::post('/', 'fileUploadController@fileUploadPost')->name('file.upload.post');
