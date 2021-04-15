@@ -16,7 +16,7 @@
     <script src="./js/jquery.flowchart.js"></script>
 
 
-    <script src="./js/middle.js"></script>
+    <scrip src="./js/middle.js"></scrip>
 
     <style>
         .flowchart-example-container {
@@ -71,7 +71,6 @@
     <!DOCTYPE html>
     @extends('welcome')
     <script src="{{ URL::asset('js/app.js') }}"></script>
-
 
     <script type="text/javascript">
         $.ajax({
@@ -622,13 +621,10 @@
                     "toConnector": "input_1"
                 }
             }
-
-
         };
         if (false) console.log('remove lint unused warning', defaultFlowchartData);
 
     </script>
-
 
 </body>
 
