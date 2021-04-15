@@ -17,8 +17,8 @@
 
     <style>
         .flowchart-example-container {
-            width: 2400px;
-            height: 700px;
+            width: 1800px;
+            height: 500px;
             background: white;
             border: 1px solid #BBB;
             margin-bottom: 10px;
@@ -68,147 +68,6 @@
     <!DOCTYPE html>
     @extends('welcome')
     <script src="{{ URL::asset('js/app.js') }}"></script>
-
-    <script type="text/javascript">
-        $.ajax({
-            method: 'GET',
-            url: 'http://localhost:3000',
-            success: function(tables) {
-                let operators = []
-                tables.forEach(function(item) {
-                    var cols = []
-                    var external_cols = []
-                    var input_cols = []
-                    var outputs = []
-                    item.columns.forEach(function(col) {
-                        cols.push(col.name)
-                    })
-
-                    if (item.foreignKeys) {
-                        item.foreignKeys.forEach(function(key) {
-                            key.columns.forEach(function(col, idx) {
-                                external_cols.push(col.column)
-                                var output = {
-                                    column: col.column,
-                                    table: key.reference.table,
-                                    field: key.reference.columns[idx].column
-                                }
-                                outputs.push(output)
-                            })
-                        })
-                    }
-                    input_cols = cols.filter(x => !external_cols.includes(x));
-                    let operator = {
-                        name: item.name,
-                        inputs: input_cols,
-                        outputs: outputs,
-                    }
-                    operators.push(operator)
-                })
-
-                var i = 1;
-                var data = {}
-                var operator = "operator" + i;
-                data['operators'] = {}
-                data['operators'][operator] = {}
-
-                let links_table = {}
-                data['links'] = {}
-                operators.forEach(function(item) {
-                    let j = 1
-                    let k = 1
-                    data['operators'][operator] = {}
-                    data['operators'][operator]['top'] = Math.random() * 600;
-                    data['operators'][operator]['left'] = Math.random() * 1500;
-                    data['operators'][operator]['properties'] = {}
-                    data['operators'][operator]['properties']['title'] = item.name;
-                    data['operators'][operator]['properties']['inputs'] = {}
-                    links_table[item.name] = {
-                        operator: operator,
-                        inputs: [],
-                        outputs: []
-                    }
-                    item.inputs.forEach(function(input) {
-                        let inp = "input_" + j
-                        data['operators'][operator]['properties']['inputs'][inp] = {
-                            label: input
-                        }
-                        let obj = {}
-                        obj[input] = inp
-                        links_table[item.name].inputs.push(obj)
-                        j++
-                    })
-                    data['operators'][operator]['properties']['outputs'] = {}
-                    item.outputs.forEach(function(output) {
-                        let outp = "output_" + k
-                        let col = output.column
-                        data['operators'][operator]['properties']['outputs'][outp] = {
-                            label: col
-                        }
-                        let obj = {}
-                        obj[col] = outp;
-                        obj["table"] = output.table;
-                        obj["field"] = output.field;
-                        links_table[item.name].outputs.push(obj)
-                        k++
-                    })
-                    i++;
-                    operator = "operator" + i;
-                })
-
-                i = 1;
-                links = {}
-                operators.forEach(function(item) {
-                    item.outputs.forEach(function(output) {
-                        let l = "link_" + i;
-                        let fromOperator = links_table[item.name].operator
-                        let fromConnector = "";
-                        let toOperator = "";
-                        let toConnector = "";
-                        links_table[item.name].outputs.forEach(function(elem) {
-                            if (elem[output.column]) {
-                                fromConnector = elem[output.column]
-                                if (links_table[elem["table"]]) {
-                                    toOperator = links_table[elem["table"]].operator
-                                    links_table[elem["table"]].inputs.forEach(
-                                        function(inp) {
-                                            if (inp[elem["field"]]) {
-                                                toConnector = inp[elem["field"]]
-                                                links[l] = {
-                                                    fromOperator: fromOperator,
-                                                    fromConnector: fromConnector,
-                                                    toOperator: toOperator,
-                                                    toConnector: toConnector
-                                                }
-                                            }
-                                        })
-                                }
-                            }
-                        })
-                        i++
-                    })
-                })
-                data['links'] = links;
-                //console.log(JSON.stringify(data));
-                console.log(data); ///
-                $('#example_2').flowchart({
-                    data: data,
-                    defaultLinkColor: '#000000',
-                    linkWidth: 2,
-                    //defaultOperatorClass: 'flowchart-custom-operator',
-                    onOperatorSelect: function(operatorId) {
-                        openNav($flowchart, operatorId, $flowchart.flowchart('getOperatorData',
-                            operatorId));
-                        return true;
-                    }
-                });
-            },
-            error: function(request, status, error) {
-                alert(request.responseText);
-            }
-        });
-
-    </script>
 
     <script type="text/javascript">
         /* global $ */
@@ -446,187 +305,181 @@
 
 
         });
-
-
-
+        
         var defaultFlowchartData = {
-  "operators": {
-    "operator1": {
-      "top": 373.76219874526475,
-      "left": 958.7699711443186,
-      "properties": {
-        "title": "eroe",
-        "inputs": {
-          "input_1": {
-            "label": "cod_mortale"
-          },
-          "input_2": {
-            "label": "nome"
-          },
-          "input_3": {
-            "label": "forza"
-          },
-          "input_4": {
-            "label": "intelligenza"
-          },
-          "input_5": {
-            "label": "destrezza"
-          }
+    "operators": {
+        "operator1": {
+            "top": 373.76219874526475,
+            "left": 958.7699711443186,
+            "properties": {
+                "title": "eroe",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_mortale"
+                    },
+                    "input_2": {
+                        "label": "nome"
+                    },
+                    "input_3": {
+                        "label": "forza"
+                    },
+                    "input_4": {
+                        "label": "intelligenza"
+                    },
+                    "input_5": {
+                        "label": "destrezza"
+                    }
+                },
+                "outputs": {}
+            }
         },
-        "outputs": {}
-      }
-    },
-    "operator2": {
-      "top": 131.64902371412134,
-      "left": 1172.908630991885,
-      "properties": {
-        "title": "mostro",
-        "inputs": {
-          "input_1": {
-            "label": "cod_mortale"
-          },
-          "input_2": {
-            "label": "nome"
-          },
-          "input_3": {
-            "label": "forza"
-          },
-          "input_4": {
-            "label": "intelligenza"
-          },
-          "input_5": {
-            "label": "destrezza"
-          }
+        "operator2": {
+            "top": 131.64902371412134,
+            "left": 1172.908630991885,
+            "properties": {
+                "title": "mostro",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_mortale"
+                    },
+                    "input_2": {
+                        "label": "nome"
+                    },
+                    "input_3": {
+                        "label": "forza"
+                    },
+                    "input_4": {
+                        "label": "intelligenza"
+                    },
+                    "input_5": {
+                        "label": "destrezza"
+                    }
+                },
+                "outputs": {}
+            }
         },
-        "outputs": {}
-      }
-    },
-    "operator3": {
-      "top": 180.47224761439364,
-      "left": 1394.5709289134745,
-      "properties": {
-        "title": "arma",
-        "inputs": {
-          "input_1": {
-            "label": "cod_oggetto"
-          },
-          "input_2": {
-            "label": "nome"
-          },
-          "input_3": {
-            "label": "peso"
-          },
-          "input_4": {
-            "label": "danno"
-          },
-          "input_5": {
-            "label": "raggio_min"
-          },
-          "input_6": {
-            "label": "raggio_max"
-          }
+        "operator3": {
+            "top": 180.47224761439364,
+            "left": 1394.5709289134745,
+            "properties": {
+                "title": "arma",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_oggetto"
+                    },
+                    "input_2": {
+                        "label": "nome"
+                    },
+                    "input_3": {
+                        "label": "peso"
+                    },
+                    "input_4": {
+                        "label": "danno"
+                    },
+                    "input_5": {
+                        "label": "raggio_min"
+                    },
+                    "input_6": {
+                        "label": "raggio_max"
+                    }
+                },
+                "outputs": {}
+            }
         },
-        "outputs": {}
-      }
-    },
-    "operator4": {
-      "top": 450.7593367290538,
-      "left": 1402.7069045470992,
-      "properties": {
-        "title": "elemento_protettivo",
-        "inputs": {
-          "input_1": {
-            "label": "cod_oggetto"
-          },
-          "input_2": {
-            "label": "nome"
-          },
-          "input_3": {
-            "label": "peso"
-          },
-          "input_4": {
-            "label": "resistenza"
-          }
+        "operator4": {
+            "top": 450.7593367290538,
+            "left": 1402.7069045470992,
+            "properties": {
+                "title": "elemento_protettivo",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_oggetto"
+                    },
+                    "input_2": {
+                        "label": "nome"
+                    },
+                    "input_3": {
+                        "label": "peso"
+                    },
+                    "input_4": {
+                        "label": "resistenza"
+                    }
+                },
+                "outputs": {}
+            }
         },
-        "outputs": {}
-      }
-    },
-    "operator5": {
-      "top": 245.11485948523259,
-      "left": 32.58925326313683,
-      "properties": {
-        "title": "equipaggiamento",
-        "inputs": {
-          "input_1": {
-            "label": "cod_oggetto"
-          }
+        "operator5": {
+            "top": 245.11485948523259,
+            "left": 32.58925326313683,
+            "properties": {
+                "title": "equipaggiamento",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_oggetto"
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "label": "cod_eroe"
+                    }
+                }
+            }
         },
-        "outputs": {
-          "output_1": {
-            "label": "cod_eroe"
-          }
+        "operator6": {
+            "top": 301.2716273772201,
+            "left": 241.17336091008363,
+            "properties": {
+                "title": "divinita",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_divinita"
+                    },
+                    "input_2": {
+                        "label": "nome"
+                    },
+                    "input_3": {
+                        "label": "influenza"
+                    }
+                },
+                "outputs": {}
+            }
+        },
+        "operator7": {
+            "top": 465.1394628579039,
+            "left": 1392.987542920273,
+            "properties": {
+                "title": "protezione_divina",
+                "inputs": {
+                    "input_1": {
+                        "label": "cod_mortale"
+                    }
+                },
+                "outputs": {
+                    "output_1": {
+                        "label": "cod_divinita"
+                    }
+                }
+            }
         }
-      }
     },
-    "operator6": {
-      "top": 301.2716273772201,
-      "left": 241.17336091008363,
-      "properties": {
-        "title": "divinita",
-        "inputs": {
-          "input_1": {
-            "label": "cod_divinita"
-          },
-          "input_2": {
-            "label": "nome"
-          },
-          "input_3": {
-            "label": "influenza"
-          }
+    "links": {
+        "link_1": {
+            "fromOperator": "operator5",
+            "fromConnector": "output_1",
+            "toOperator": "operator1",
+            "toConnector": "input_1"
         },
-        "outputs": {}
-      }
-    },
-    "operator7": {
-      "top": 465.1394628579039,
-      "left": 1392.987542920273,
-      "properties": {
-        "title": "protezione_divina",
-        "inputs": {
-          "input_1": {
-            "label": "cod_mortale"
-          }
-        },
-        "outputs": {
-          "output_1": {
-            "label": "cod_divinita"
-          }
+        "link_2": {
+            "fromOperator": "operator7",
+            "fromConnector": "output_1",
+            "toOperator": "operator6",
+            "toConnector": "input_1"
         }
-      }
     }
-  },
-  "links": {
-    "link_1": {
-      "fromOperator": "operator5",
-      "fromConnector": "output_1",
-      "toOperator": "operator1",
-      "toConnector": "input_1"
-    },
-    "link_2": {
-      "fromOperator": "operator7",
-      "fromConnector": "output_1",
-      "toOperator": "operator6",
-      "toConnector": "input_1"
-    }
-}
-        };
+};
         if (false) console.log('remove lint unused warning', defaultFlowchartData);
 
     </script>
-
-
-
-
 
 
 </body>
