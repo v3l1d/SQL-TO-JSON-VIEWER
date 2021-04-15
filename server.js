@@ -8,6 +8,7 @@ const parser = new Parser("mysql");
 var app = express();
 
 app.get("/", function(req, res) {
+
     let latestFile = getLatestFileName();
 
     //  fs.readFile('./storage/app/uploads/TestTables.sql' + req.query.file, 'utf8', function (err,sql) {
