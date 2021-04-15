@@ -23,7 +23,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "fs": "*",
-    "jquery": "^3.6.0",
     "jquery.flowchart": "^1.1.0",
     "sql-ddl-to-json-schema": "^4.0.4"
   },

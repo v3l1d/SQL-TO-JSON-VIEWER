@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'fileUploadController@fileUpload')->name('file.upload');
 Route::post('/', 'fileUploadController@fileUploadPost')->name('file.upload.post');
+Route::get('/visualize', function(){
+    return view('visualize');
+});

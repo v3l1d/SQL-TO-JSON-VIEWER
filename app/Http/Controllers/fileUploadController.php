@@ -30,7 +30,6 @@ class FileUploadController extends Controller
 
         $filename = $request->file->getClientOriginalName();
         $request->file->storeAs('uploads', $filename);
-
-        return view('visualize');
+            return redirect("/visualize");
 }
 }
