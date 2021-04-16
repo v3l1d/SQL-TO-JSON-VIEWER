@@ -70,12 +70,12 @@
 
     <!DOCTYPE html>
     @extends('welcome')
-    <script src="{{ URL::asset('js/app.js') }}"></script>
 
     <script type="text/javascript">
         $.ajax({
             method: 'GET',
             url: 'http://localhost:3000',
+            async:false,
             success: function(tables) {
                 let operators = []
                 tables.forEach(function(item) {
@@ -192,29 +192,28 @@
                     })
                 })
                 data['links'] = links;
-                console.log(JSON.stringify(data));
-                $('#example_2').flowchart({
-                    data: data,
-                    defaultLinkColor: '#000000',
-                    linkWidth: 2,
-                    //defaultOperatorClass: 'flowchart-custom-operator',
-                    onOperatorSelect: function(operatorId) {
-                        openNav($flowchart, operatorId, $flowchart.flowchart('getOperatorData',
-                            operatorId));
-                        return true;
-                    }
-                });
+                //console.log(JSON.stringify(data));
+                useReturnData(data);
+
             },
             error: function(request, status, error) {
                 alert(request.responseText);
             }
         });
 
-    </script>
+var returnedDatas;
+
+function useReturnData(data){
+    myvar = data;
+    //console.log(myvar);
+    returnedDatas=data;
+    return myvar
+};
+
+console.log(returnedDatas);
 
 
 
-    <script type="text/javascript">
         /* global $ */
         $(document).ready(function() {
             var $flowchart = $('#flowchartworkspace');
