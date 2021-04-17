@@ -210,12 +210,12 @@ function useReturnData(data){
     return myvar
 };
 
-console.log(returnedDatas);
 
 
 
         /* global $ */
         $(document).ready(function() {
+            console.log(JSON.stringify(returnedDatas));
             var $flowchart = $('#flowchartworkspace');
             var $container = $flowchart.parent();
 
@@ -450,177 +450,7 @@ console.log(returnedDatas);
 
         });
 
-        var defaultFlowchartData = {
-            "operators": {
-                "operator1": {
-                    "top": 373.76219874526475,
-                    "left": 958.7699711443186,
-                    "properties": {
-                        "title": "eroe",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_mortale"
-                            },
-                            "input_2": {
-                                "label": "nome"
-                            },
-                            "input_3": {
-                                "label": "forza"
-                            },
-                            "input_4": {
-                                "label": "intelligenza"
-                            },
-                            "input_5": {
-                                "label": "destrezza"
-                            }
-                        },
-                        "outputs": {}
-                    }
-                },
-                "operator2": {
-                    "top": 131.64902371412134,
-                    "left": 1172.908630991885,
-                    "properties": {
-                        "title": "mostro",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_mortale"
-                            },
-                            "input_2": {
-                                "label": "nome"
-                            },
-                            "input_3": {
-                                "label": "forza"
-                            },
-                            "input_4": {
-                                "label": "intelligenza"
-                            },
-                            "input_5": {
-                                "label": "destrezza"
-                            }
-                        },
-                        "outputs": {}
-                    }
-                },
-                "operator3": {
-                    "top": 180.47224761439364,
-                    "left": 1394.5709289134745,
-                    "properties": {
-                        "title": "arma",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_oggetto"
-                            },
-                            "input_2": {
-                                "label": "nome"
-                            },
-                            "input_3": {
-                                "label": "peso"
-                            },
-                            "input_4": {
-                                "label": "danno"
-                            },
-                            "input_5": {
-                                "label": "raggio_min"
-                            },
-                            "input_6": {
-                                "label": "raggio_max"
-                            }
-                        },
-                        "outputs": {}
-                    }
-                },
-                "operator4": {
-                    "top": 450.7593367290538,
-                    "left": 1402.7069045470992,
-                    "properties": {
-                        "title": "elemento_protettivo",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_oggetto"
-                            },
-                            "input_2": {
-                                "label": "nome"
-                            },
-                            "input_3": {
-                                "label": "peso"
-                            },
-                            "input_4": {
-                                "label": "resistenza"
-                            }
-                        },
-                        "outputs": {}
-                    }
-                },
-                "operator5": {
-                    "top": 245.11485948523259,
-                    "left": 32.58925326313683,
-                    "properties": {
-                        "title": "equipaggiamento",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_oggetto"
-                            }
-                        },
-                        "outputs": {
-                            "output_1": {
-                                "label": "cod_eroe"
-                            }
-                        }
-                    }
-                },
-                "operator6": {
-                    "top": 301.2716273772201,
-                    "left": 241.17336091008363,
-                    "properties": {
-                        "title": "divinita",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_divinita"
-                            },
-                            "input_2": {
-                                "label": "nome"
-                            },
-                            "input_3": {
-                                "label": "influenza"
-                            }
-                        },
-                        "outputs": {}
-                    }
-                },
-                "operator7": {
-                    "top": 465.1394628579039,
-                    "left": 1392.987542920273,
-                    "properties": {
-                        "title": "protezione_divina",
-                        "inputs": {
-                            "input_1": {
-                                "label": "cod_mortale"
-                            }
-                        },
-                        "outputs": {
-                            "output_1": {
-                                "label": "cod_divinita"
-                            }
-                        }
-                    }
-                }
-            },
-            "links": {
-                "link_1": {
-                    "fromOperator": "operator5",
-                    "fromConnector": "output_1",
-                    "toOperator": "operator1",
-                    "toConnector": "input_1"
-                },
-                "link_2": {
-                    "fromOperator": "operator7",
-                    "fromConnector": "output_1",
-                    "toOperator": "operator6",
-                    "toConnector": "input_1"
-                }
-            }
-        };
+        var defaultFlowchartData = returnedDatas;
         if (false) console.log('remove lint unused warning', defaultFlowchartData);
 
     </script>
