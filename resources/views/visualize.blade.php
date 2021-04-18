@@ -19,21 +19,12 @@
     <scrip src="./js/middle.js"></scrip>
 
     <style>
-        .flowchart-example-container {
-            width: 1800px;
-            height: 500px;
-            background: white;
-            border: 1px solid #BBB;
-            margin-bottom: 10px;
-        }
+
 
     </style>
 </head>
 
 <body>
-    <h1>Semi-minimalist usage sample</h1>
-    <h4>Sample created with basis on some from Sebastien Drouyer, original author's <a
-            href="https://sebastien.drouyer.com/jquery.flowchart-demo/">website</a>.</h4>
     <h4>Flowchart</h4>
     <div id="chart_container">
         <div class="flowchart-example-container" id="flowchartworkspace"></div>
@@ -66,6 +57,7 @@
     <div>
         <textarea id="flowchart_data"></textarea>
     </div>
+
 
 
     <!DOCTYPE html>
