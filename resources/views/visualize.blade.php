@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Home</title>
+    <title>Visualize Flowchart</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,10 +25,14 @@
 </head>
 
 <body>
-    <h4>Flowchart</h4>
+  <div class="myBody">
+  <h4> Flowchart </h4>
     <div id="chart_container">
         <div class="flowchart-example-container" id="flowchartworkspace"></div>
     </div>
+  </div>
+
+  <div class="myButtons">
     <div class="draggable_operators">
         <div class="draggable_operators_label">
             Operators (drag and drop them in the flowchart):
@@ -52,11 +56,13 @@
     </div>
     <button class="get_data" id="get_data">Get data</button>
     <button class="set_data" id="set_data">Set data</button>
-    <button id="save_local">Save to local storage</button>
-    <button id="load_local">Load from local storage</button>
-    <div>
+    <button class="save_local" id="save_local">Save to local storage</button>
+    <button class="load_local "id="load_local">Load from local storage</button>
+
+    <div class="textarea">
         <textarea id="flowchart_data"></textarea>
     </div>
+  </div>
 
 
 
