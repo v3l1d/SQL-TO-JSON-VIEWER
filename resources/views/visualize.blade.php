@@ -40,7 +40,7 @@
         </div>
     </div>
     
-    <button class="create_operator " >Create operator</button>
+    <button class="create_operator crudbtn" >Create operator</button>
     <button class="delete_selected_button crudbtn">Delete selected operator / link</button>
     <div id="operator_properties" style="display: block;">
         <label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
