@@ -20,11 +20,6 @@ body {
     width: 100%;
 }
 
-.myBody {
-    padding-top: 60px;
-
-}
-
 .footer {
     margin: auto;
     position: fixed;
@@ -127,49 +122,6 @@ h4 {
 
 .crudbtn{
   padding-top: 10px;
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.myButtons{
-  padding-top: 10px;
-  display: block;
-  text-align: center;
-}
-
-.create_operator{
-  margin-top: 10px;
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.delete_selected_button{
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.get_data{
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.set_data{
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.save_local{
-  background-color: #668cff;
-  color:white;
-  padding: 5px;
-}
-
-.load_local{
   background-color: #668cff;
   color:white;
   padding: 5px;

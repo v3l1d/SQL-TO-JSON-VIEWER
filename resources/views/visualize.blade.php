@@ -18,44 +18,37 @@
 </head>
 
 <body>
-  <div class="myBody">
-  <h4> Flowchart </h4>
     <div id="chart_container">
-        <div class="flowchart-example-container" id="flowchartworkspace"></div>
-    </div>
-  </div>
-
-  <div class="myButtons">
-    <div class="draggable_operators">
-        <div class="draggable_operators_label">
-            Operators (drag and drop them in the flowchart):
-        </div>
-        <div class="draggable_operators_divs">
-            <div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
-            <div class="draggable_operator" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
-            <div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
-            <div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
-            <div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
-            <div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
-        </div>
-    </div>
-    
-    <button class="create_operator crudbtn" >Create operator</button>
-    <button class="delete_selected_button crudbtn">Delete selected operator / link</button>
-    <div id="operator_properties" style="display: block;">
-        <label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
-    </div>
-    <div id="link_properties" style="display: block;">
-        <label for="link_color">Link's color: </label><input id="link_color" type="color">
-    </div>
-    <button class="get_data crudbtn" id="get_data">Get data</button>
-    <button class="set_data crudbtn" id="set_data">Set data</button>
-    <button class="crudbtn" id="save_local ">Save to local storage</button>
-    <button class="crudbtn" id="load_local">Load from local storage</button>
-    <div>
-        <textarea class="dataArea" id="flowchart_data"></textarea>
-    </div>
-  </div>
+		<div class="flowchart-example-container" id="flowchartworkspace"></div>
+	</div>
+	<div class="draggable_operators">
+		<div class="draggable_operators_label">
+			Operators (drag and drop them in the flowchart):
+		</div>
+		<div class="draggable_operators_divs">
+			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
+			<div class="draggable_operator" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
+			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
+			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
+			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
+			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
+		</div>
+	</div>
+	<button class="crudbtn">Create operator</button>
+	<button class="crudbtn"">Delete selected operator / link</button>
+	<div id="operator_properties" style="display: block;">
+		<label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
+	</div>
+	<div id="link_properties" style="display: block;">
+		<label for="link_color">Link's color: </label><input id="link_color" type="color">
+	</div>
+	<button class="crudbtn" id="get_data">Get data</button>
+	<button class="crudbtn" id="set_data">Set data</button>
+	<button class="crudbtn" id="save_local">Save to local storage</button>
+	<button class="crudbtn" id="load_local">Load from local storage</button>
+	<div>
+		<textarea class="dataArea" id="flowchart_data"></textarea>
+	</div>
 
 
 
