@@ -15,13 +15,6 @@
     <link rel="stylesheet" href="./js/jquery.flowchart.css">
     <script src="./js/jquery.flowchart.js"></script>
 
-
-    <scrip src="./js/middle.js"></scrip>
-
-    <style>
-
-
-    </style>
 </head>
 
 <body>
@@ -42,20 +35,21 @@
             <div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
         </div>
     </div>
-    <button class="create_operator">Create operator</button>
-    <button class="delete_selected_button">Delete selected operator / link</button>
+    
+    <button class="create_operator crudbtn" >Create operator</button>
+    <button class="delete_selected_button crudbtn">Delete selected operator / link</button>
     <div id="operator_properties" style="display: block;">
         <label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
     </div>
     <div id="link_properties" style="display: block;">
         <label for="link_color">Link's color: </label><input id="link_color" type="color">
     </div>
-    <button class="get_data" id="get_data">Get data</button>
-    <button class="set_data" id="set_data">Set data</button>
-    <button id="save_local">Save to local storage</button>
-    <button id="load_local">Load from local storage</button>
+    <button class="get_data crudbtn" id="get_data">Get data</button>
+    <button class="set_data crudbtn" id="set_data">Set data</button>
+    <button class="crudbtn" id="save_local ">Save to local storage</button>
+    <button class="crudbtn" id="load_local">Load from local storage</button>
     <div>
-        <textarea id="flowchart_data"></textarea>
+        <textarea class="dataArea" id="flowchart_data"></textarea>
     </div>
 
 
@@ -113,8 +107,8 @@
                     let j = 1
                     let k = 1
                     data['operators'][operator] = {}
-                    data['operators'][operator]['top'] = Math.random() * 600;
-                    data['operators'][operator]['left'] = Math.random() * 1500;
+                    data['operators'][operator]['top'] = Math.random() * 500;
+                    data['operators'][operator]['left'] = Math.random() * 1300;
                     data['operators'][operator]['properties'] = {}
                     data['operators'][operator]['properties']['title'] = item.name;
                     data['operators'][operator]['properties']['inputs'] = {}
