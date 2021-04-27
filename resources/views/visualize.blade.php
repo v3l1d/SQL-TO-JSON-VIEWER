@@ -26,22 +26,15 @@
 			Operators (drag and drop them in the flowchart):
 		</div>
 		<div class="draggable_operators_divs">
-			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="0">1 input</div>
-			<div class="draggable_operator" data-nb-inputs="0" data-nb-outputs="1">1 output</div>
-			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="1">1 input &amp; 1 output</div>
-			<div class="draggable_operator" data-nb-inputs="1" data-nb-outputs="2">1 in &amp; 2 out</div>
-			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
-			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
 		</div>
 	</div>
-	<button class="crudbtn">Create operator</button>
-	<button class="crudbtn"">Delete selected operator / link</button>
 	<div id="operator_properties" style="display: block;">
 		<label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
 	</div>
 	<div id="link_properties" style="display: block;">
 		<label for="link_color">Link's color: </label><input id="link_color" type="color">
 	</div>
+  <div id="tableview"></div>
 	<button class="crudbtn" id="get_data">Get data</button>
 	<button class="crudbtn" id="set_data">Set data</button>
 	<button class="crudbtn" id="save_local">Save to local storage</button>
@@ -199,7 +192,7 @@ function useReturnData(data){
 
         /* global $ */
         $(document).ready(function() {
-            console.log(JSON.stringify(returnedDatas));
+      //      console.log(JSON.stringify(returnedDatas));
             var $flowchart = $('#flowchartworkspace');
             var $container = $flowchart.parent();
 
@@ -390,11 +383,57 @@ function useReturnData(data){
             //-----------------------------------------
             //--- save and load
             //--- start
+
+
+
             function Flow2Text() {
                 var data = $flowchart.flowchart('getData');
                 $('#flowchart_data').val(JSON.stringify(data, null, 2));
+                return data;
             }
-            $('#get_data').click(Flow2Text);
+
+
+            $('.flowchart-operator').click(function(){
+              $(this).css()
+              $(this).css('backgorund-color',"F000");
+            });
+
+            //extraction for modifies
+            var datasToEdit=Flow2Text();
+
+
+
+/**
+
+          function setTitle(datas,toSearch,toSet){
+            var i=1;
+            for( i in datas){
+              // remember that i = operator , is not considered as numeric index
+              var opanme="operator1";
+              var j=1;
+              if(datas[i]["operator"+j]["properties"]["title"]==toSearch){
+                console.log("funziona");
+                datas[i]["operator"+j]["properties"]["title"]=toSet;
+              }
+              console.log(datas[i]);
+            }
+
+          }
+
+          setTitle(datasToEdit,"ciao","culo");
+
+
+          **/
+
+          //the above funtion works but gives error for jQuery, now try jquery method each()
+
+
+
+
+        //    console.log($('#get_data').click(Flow2Text));
+        var data=JSON.parse($('#flowchart_data').val());
+
+          //  console.log(data["operators"][opname]);
 
             function Text2Flow() {
                 var data = JSON.parse($('#flowchart_data').val());

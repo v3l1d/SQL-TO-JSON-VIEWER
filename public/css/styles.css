@@ -13,11 +13,13 @@ body {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0%;
+    left:30%;
+    bottom:100%;
     margin: auto;
     text-align: center;
-    width: 100%;
+
 }
 
 .footer {
