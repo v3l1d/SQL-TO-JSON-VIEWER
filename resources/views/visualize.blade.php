@@ -41,6 +41,7 @@
 	<button class="crudbtn" id="load_local">Load from local storage</button>
 	<div>
 		<textarea class="dataArea" id="flowchart_data"></textarea>
+    
 	</div>
 
 
@@ -388,18 +389,11 @@ function useReturnData(data){
 
             function Flow2Text() {
                 var data = $flowchart.flowchart('getData');
+
                 $('#flowchart_data').val(JSON.stringify(data, null, 2));
+                //$('#flowchart_data').html("title:" + data["operators"]["operator1"]["properties"]["title"]);
                 return data;
             }
-
-
-            $('.flowchart-operator').click(function(){
-              $(this).css()
-              $(this).css('backgorund-color',"F000");
-            });
-
-            //extraction for modifies
-            var datasToEdit=Flow2Text();
 
 
 
@@ -430,15 +424,18 @@ function useReturnData(data){
 
 
 
-        //    console.log($('#get_data').click(Flow2Text));
-        var data=JSON.parse($('#flowchart_data').val());
+        console.log($('#get_data').click(Flow2Text));
 
           //  console.log(data["operators"][opname]);
+
+
+
 
             function Text2Flow() {
                 var data = JSON.parse($('#flowchart_data').val());
                 $flowchart.flowchart('setData', data);
             }
+
             $('#set_data').click(Text2Flow);
 
             /*global localStorage*/
