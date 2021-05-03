@@ -3,8 +3,10 @@
  */
 
 .flowchart-container {
-    position: relative;
+    position: absolute;
+    margin:0;
     overflow: hidden;
+    height:100%;
 }
 
 .flowchart-links-layer, .flowchart-operators-layer, .flowchart-temporary-link-layer {
@@ -17,6 +19,7 @@
 
 .flowchart-operators-layer, .flowchart-temporary-link-layer {
     pointer-events: none;
+    heigh:100%;
 }
 
 .flowchart-temporary-link-layer {

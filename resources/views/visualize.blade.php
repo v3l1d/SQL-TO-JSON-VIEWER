@@ -21,6 +21,7 @@
     <div id="chart_container">
 		<div class="flowchart-example-container" id="flowchartworkspace"></div>
 	</div>
+   <!--
 	<div class="draggable_operators">
 		<div class="draggable_operators_label">
 			Operators (drag and drop them in the flowchart):
@@ -33,16 +34,29 @@
 			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="1">2 in &amp; 1 out</div>
 			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
 		</div>
-	</div>
+	</div>-->
+
   <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
-  <textarea class="showdatas" id="operator_body"></textarea>
-  </div>
+  <textarea class="showdatas" id="operator_body" widht="840" heigh="300"></textarea>
 </div>
 
-	<button class="crudbtn">Create operator</button>
-	<button class="crudbtn">Delete selected operator / link</button>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+</div>
+
+
+
+
+  <!--
+  <button class="crudbtn">Create operator</button>
+  <button class="crudbtn">Delete selected operator / link</button>
 	<div id="operator_properties" style="display: block;">
 		<label for="operator_title">Operator's title: </label><input id="operator_title" type="text">
 	</div>
@@ -55,7 +69,7 @@
 	<button class="crudbtn" id="load_local">Load from local storage</button>
 	<div>
 		<textarea class="dataArea" id="flowchart_data"></textarea>
-	</div>
+	</div> -->
 
 
 
@@ -268,7 +282,7 @@ function useReturnData(data){
                 onOperatorSelect: function(operatorId) {
 
                     $operatorProperties.show();
-                    $operatorTitle.val($flowchart.flowchart('getOperatorBody', operatorId));
+                    $operatorTitle.val(JSON.stringify($flowchart.flowchart('getOperatorData', operatorId)));
 
                     return true;
                 },
@@ -407,7 +421,6 @@ function useReturnData(data){
 
 
 
-
               $('#flowchart-default-operator').click(function(){
                 var data=$flowchart.flowchart('getOperatorData');
                 console.log(data);
@@ -419,7 +432,11 @@ function useReturnData(data){
             function Flow2Text() {
                 var data = $flowchart.flowchart('getData');
                 $('#flowchart_data').val(JSON.stringify(data, null, 2));
+                return data;
             }
+
+            var datas=Flow2Text();
+            console.log(datas);
             $('#get_data').click(Flow2Text);
 
             function Text2Flow() {
