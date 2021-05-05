@@ -39,7 +39,7 @@
   <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
-  <textarea class="showdatas" id="operator_body" widht="840" heigh="300"></textarea>
+  <textarea class="showdatas" id="operator_body" width="840" height="300"></textarea>
 </div>
 
   <div id="mySidenav" class="sidenav">
