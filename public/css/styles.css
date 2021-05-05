@@ -1,19 +1,21 @@
-body {
+/*body {
     background-color: #fff;
     color: #636b6f;
     font-family: "Nunito", sans-serif;
     font-weight: 200;
     height: 100vh;
     margin: 0;
-}
+}*/
 
 html,
 body {
     font-family: "Nunito", sans-serif;
+    color: #636b6f;
 }
 
 .header {
-    position: fixed;
+    //position: fixed;
+    position: sticky;
     top: 0%;
     left:30%;
     bottom:100%;
@@ -113,13 +115,12 @@ h4 {
 }
 
 .flowchart-example-container {
-  height: 700px;
+  height: 100%;
   width: 100%;
   background: #d9e6f2;
-  margin-bottom: 2px;
-  text-align: center;
-  display: block;
-  border-radius: 5px;
+  margin-top: 140px;
+  position fixed ;
+  border-radius: 10px;
 }
 
 .crudbtn{
@@ -179,6 +180,7 @@ h4 {
 /* Show the dropdown menu on hover */
 .dropdown .dropdown-content {
   display: block;
+
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
