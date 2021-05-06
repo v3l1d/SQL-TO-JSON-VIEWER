@@ -42,12 +42,7 @@
   <textarea class="showdatas" id="operator_body" width="840" height="300"></textarea>
 </div>
 
-  <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+
 </div>
 </div>
 
@@ -223,6 +218,7 @@ function useReturnData(data){
           //  console.log(JSON.stringify(returnedDatas));
             var $flowchart = $('#flowchartworkspace');
             var $container = $flowchart.parent();
+            console.log(returnedDatas);
 
 
             // Apply the plugin on a standard, empty div...
