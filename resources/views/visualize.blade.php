@@ -13,13 +13,24 @@
 
     <!-- Flowchart CSS and JS -->
     <link rel="stylesheet" href="./js/jquery.flowchart.css">
+    <link rel="stylesheet" href="./js/menu.css">
     <script src="./js/jquery.flowchart.js"></script>
-
+    <script src="./js/JSONedtr.js"></script>
 </head>
 
 <body>
     <div id="chart_container">
 		<div class="flowchart-example-container" id="flowchartworkspace"></div>
+    <div class="w3-sidebar w3-bar-block w3-collapse" style="width:200px;right:0" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-hide-large"
+  onclick="w3_close()">Close &times;</button>
+
+</div>
+  </div>
+</div>
+
+</div>
+    <div id="output"></div>
 	</div>
    <!--
 	<div class="draggable_operators">
@@ -35,12 +46,13 @@
 			<div class="draggable_operator" data-nb-inputs="2" data-nb-outputs="2">2 in &amp; 2 out</div>
 		</div>
 	</div>-->
-
+<!--
   <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content">
   <textarea class="showdatas" id="operator_body" width="840" height="300"></textarea>
 </div>
+-->
 
 
 </div>
@@ -218,7 +230,7 @@ function useReturnData(data){
           //  console.log(JSON.stringify(returnedDatas));
             var $flowchart = $('#flowchartworkspace');
             var $container = $flowchart.parent();
-            console.log(returnedDatas);
+
 
 
             // Apply the plugin on a standard, empty div...
@@ -276,14 +288,24 @@ function useReturnData(data){
 
 
                 onOperatorSelect: function(operatorId) {
-
-                    $operatorProperties.show();
-                    $operatorTitle.val(JSON.stringify($flowchart.flowchart('getOperatorData', operatorId)));
-
+                  var data=$flowchart.flowchart('getOperatorData',operatorId);
+                  var op= data['properties'];
+                  console.log(data);
+                  $('#mySidebar').show();
+                  $("#mySidebar").html("<p>"+op['title']+"</p>");
+                  $.each(op['inputs'],function(index,value){
+                    $('#mySidebar').append("<p>"+value['label']+"</p>");
+                  });
+/*
+                  console.log(JSON.parse(JSON.stringify(op)));
+                  new JSONedtr( op, '#output' );
+                  console.log(op); */
                     return true;
                 },
                 onOperatorUnselect: function() {
                     $operatorProperties.hide();
+                    $('#mySidebar').hide();
+                    console.log('log');
                     return true;
                 },
                 onLinkSelect: function(linkId) {
