@@ -21,7 +21,7 @@
 <body>
     <div id="chart_container">
 		<div class="flowchart-example-container" id="flowchartworkspace"></div>
-    <div class="w3-sidebar w3-bar-block w3-collapse" style="width:200px;right:0" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-collapse" style="right:0" id="mySidebar">
   <button class="w3-bar-item w3-button w3-hide-large"
   onclick="w3_close()">Close &times;</button>
 
@@ -283,18 +283,21 @@ function useReturnData(data){
             $linkProperties.hide();
             var $operatorTitle = $('#operator_body');
             var $linkColor = $('#link_color');
-
+            var tempId;
             $flowchart.flowchart({
 
 
                 onOperatorSelect: function(operatorId) {
                   var data=$flowchart.flowchart('getOperatorData',operatorId);
                   var op= data['properties'];
+                  tempId=operatorId;
                   console.log(data);
                   $('#mySidebar').show();
-                  $("#mySidebar").html("<p>"+op['title']+"</p>");
+                  $("#mySidebar").html("<label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
                   $.each(op['inputs'],function(index,value){
-                    $('#mySidebar').append("<p>"+value['label']+"</p>");
+                    $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\"></input><br><br>");
+
+
                   });
 /*
                   console.log(JSON.parse(JSON.stringify(op)));
@@ -305,7 +308,7 @@ function useReturnData(data){
                 onOperatorUnselect: function() {
                     $operatorProperties.hide();
                     $('#mySidebar').hide();
-                    console.log('log');
+
                     return true;
                 },
                 onLinkSelect: function(linkId) {
@@ -316,6 +319,14 @@ function useReturnData(data){
                 onLinkUnselect: function() {
                     $linkProperties.hide();
                     return true;
+                }
+            });
+
+            $("body").on("change","input[id$=\"title\"]", function (){
+                var tempId=$flowchart.flowchart('getSelectedOperatorId');
+                console.log(tempId);
+                if(tempId!==null){
+                  $flowchart.flowchart('setOperatorTitle',tempId,document.getElementById('title').value);
                 }
             });
 
@@ -445,7 +456,7 @@ function useReturnData(data){
               });
 
               var xxx=$("#flowchar-operator-title").click($flowchart.flowchart('getOperatorData'));
-              console.log(xxx);
+
 
             function Flow2Text() {
                 var data = $flowchart.flowchart('getData');
