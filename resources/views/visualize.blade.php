@@ -295,10 +295,15 @@ function useReturnData(data){
                   $('#mySidebar').show();
                   $("#mySidebar").html("<label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
                   $.each(op['inputs'],function(index,value){
-                    $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\"></input><br><br>");
-
+                    var id=0;
+                    $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\" id=\"input\"></input><br><br>");
+                    $('#input').each(function(){
+                      var i=1;
+                      $(this).attr('id','input'+i);
+                    })
 
                   });
+
 /*
                   console.log(JSON.parse(JSON.stringify(op)));
                   new JSONedtr( op, '#output' );
@@ -328,6 +333,18 @@ function useReturnData(data){
                 if(tempId!==null){
                   $flowchart.flowchart('setOperatorTitle',tempId,document.getElementById('title').value);
                 }
+            });
+
+            $("body").on("click",function(event){
+                var id=event.target.id
+                var string="input";
+                if(string===id.substring(0,5)){
+                }
+            });
+            $("body").on("change","input[id$=\"input\"]",function(){
+
+              console.log(data);
+
             });
 
             $operatorTitle.keyup(function() {
