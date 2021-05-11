@@ -313,3 +313,35 @@
 	margin-left: 15px;
 	border-left: 1px dotted #ccc;
 }
+
+
+.flowchart-primary{
+
+  background:#FDB8B1; !important
+
+}
+
+
+.flowchart-primary .flowchart-operator-title{
+  background:#FDB8B1; !important
+}
+
+
+.flowchart-crossable{
+  background: #FFE302;!important
+}
+
+
+.flowchart-crossable .flowchart-operator-title{
+
+background:#FFE302;
+}
+
+.flowchart-secondary{
+  background:#02FF2AA1;!important
+}
+
+
+.flowchart-secondary .flowchart-operator-title{
+  background: #02FF2AA1; 
+}

@@ -293,7 +293,7 @@ function useReturnData(data){
                   tempId=operatorId;
                   console.log(data);
                   $('#mySidebar').show();
-                  $("#mySidebar").html("<label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
+                  $("#mySidebar").html("<br><button id=\"primary\">Primary</button> <button id=\"secondary\">Secondary</button> <button id=\"crossable\">Crossable</button> <button id=\"reset\">Reset</button><br><hr> <label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
                   var i=0;
                   $.each(op['inputs'],function(index,value){
                     i++;
@@ -322,7 +322,29 @@ function useReturnData(data){
                 }
             });
 
-            $("body").on("change","input[id$=\"title\"]", function (){
+            $("body").on("click","button[id$=\"primary\"]",function(){ //v3l1d
+                var opId=$flowchart.flowchart('getSelectedOperatorId');
+                $flowchart.flowchart("addClassOperator",opId,"flowchart-primary");
+
+            });
+
+            $("body").on("click","button[id$=\"crossable\"]",function(){ //v3l1d table crossable color changer
+                var opId=$flowchart.flowchart('getSelectedOperatorId');
+                $flowchart.flowchart("addClassOperator",opId,"flowchart-crossable");
+            });
+
+            $("body").on("click","button[id$=\"secondary\"]",function(){
+              var opId=$flowchart.flowchart('getSelectedOperatorId');
+              $flowchart.flowchart("addClassOperator",opId,"flowchart-secondary");
+            });
+            $("body").on("click","button[id$=\"reset\"]",function(){
+            
+            });
+
+
+
+            $("body").on("change","input[id$=\"title\"]", function (){ //v3l1d
+
                 var tempId=$flowchart.flowchart('getSelectedOperatorId');
                 console.log(tempId);
                 if(tempId!==null){
@@ -331,6 +353,7 @@ function useReturnData(data){
             }); //v3l1d
 
             //catch input id and column
+
 
             $("body").on("click",function(event){ //v3l1d
                 var id=event.target.id;
@@ -529,10 +552,12 @@ function useReturnData(data){
 
         var defaultFlowchartData = returnedDatas;
         if (false) console.log('remove lint unused warning', defaultFlowchartData);
-
+ /*++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>++++++++++++++++++.<-------------------.>----------.<--.>--------.<<++.>>+++++++++.------------.+++.+.<<.>>+++++++++++++++.------------.---.<<.>>++++++++.++.++++.+.--------.+++++++++++++.<<.>>-----------------.---.+++++++++++++.-------------.*/
     </script>
 
 </body>
 
 </html>
-<!-- 61 20 6d 61 72 79 2c 20 61 20 71 75 65 73 74 6f 20 70 65 72 69 6f 64 6f 20 64 69 20 69 6e 63 65 72 74 65 7a 7a 65 20 65 64 20 65 6d 6f 7a 69 6f 6e 65 2c 20 61 6c 6c 61 20 6d 69 61 20 76 69 74 61 20 63 68 65 20 6d 69 67 6c 69 6f 72 61 -->
+<!--/*++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>---.<<++.>>++++++++++++.------------.+++++++++++++++++.+++++++.<<.>>--------------------.<<.>>++++.+++.<<.>>+++++++.++.------.<<.>>--------------.++++++++++++.++.+++.-------------.<<++++++++++++.>>----.+++++++++++..-----------.<<------------.>>++++++++++++.----.--------.<<.>>+++++++++++++++++++++.-------------.+++++++++++.-------------------.<<.>>++.+++++.---.<<.>>--.--.++++++++++++.-----------.+++++++.--------.<<++++++++++++.------------.>>.+++++++++++.<<.>>++++++++.---------------.++++++++.+++.-.<<.>>------------.+++++.---.<<.>>++++++++.----.<<.>>+++++++.-.+++.++.-------------------.<<.>>++++++++.+++++.<<.>>++.-.++++.+.-----------.<<.>>+++++.+++++++.------.+++++++.-------------.<<++++++++++++.------------.>>--------.<<.>>++++++++.++++..------------.<<.>>++.+++++.---.<<.>>+++++++++++.++.-------------.++++++++++++++.+.-----.<<.>>--------------.+++++++++++++.----------.++++++++++++++.-----------------.<<.>>+++++++++++++++++++++.-------------.--------.*/
+
+ -->
