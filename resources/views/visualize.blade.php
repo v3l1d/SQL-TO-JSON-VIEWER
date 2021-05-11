@@ -287,27 +287,22 @@ function useReturnData(data){
             $flowchart.flowchart({
 
 
-                onOperatorSelect: function(operatorId) {
+                onOperatorSelect: function(operatorId) { //V3l1d
                   var data=$flowchart.flowchart('getOperatorData',operatorId);
                   var op= data['properties'];
                   tempId=operatorId;
                   console.log(data);
                   $('#mySidebar').show();
                   $("#mySidebar").html("<label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
+                  var i=0;
                   $.each(op['inputs'],function(index,value){
-                    var id=0;
-                    $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\" id=\"input\"></input><br><br>");
-                    $('#input').each(function(){
-                      var i=1;
-                      $(this).attr('id','input'+i);
-                    })
+                    i++;
+                    $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\" id=\"input_"+i+"\"></input><br><br>");
+
 
                   });
 
-/*
-                  console.log(JSON.parse(JSON.stringify(op)));
-                  new JSONedtr( op, '#output' );
-                  console.log(op); */
+
                     return true;
                 },
                 onOperatorUnselect: function() {
@@ -333,19 +328,28 @@ function useReturnData(data){
                 if(tempId!==null){
                   $flowchart.flowchart('setOperatorTitle',tempId,document.getElementById('title').value);
                 }
-            });
+            }); //v3l1d
 
-            $("body").on("click",function(event){
-                var id=event.target.id
-                var string="input";
-                if(string===id.substring(0,5)){
+            //catch input id and column
+
+            $("body").on("click",function(event){ //v3l1d
+                var id=event.target.id;
+
+                var opId=$flowchart.flowchart("getSelectedOperatorId");
+                var data=$flowchart.flowchart("getOperatorData",opId);
+                console.log(id);
+                var string="input_";
+                if(string===id.substring(0,6)){ //catch data inside beacuse you have to verify that id is == to input_ and not to casual element of body //V3l1d
+                  $("body").on("change","input[id$=\""+id+"\"]",function(event){
+                    var val=document.getElementById(id).value;
+                    data['properties']['inputs'][id]['label']=val;
+                    $flowchart.flowchart('setOperatorData',opId,data);
+
+                  });
                 }
-            });
-            $("body").on("change","input[id$=\"input\"]",function(){
-
-              console.log(data);
 
             });
+
 
             $operatorTitle.keyup(function() {
                 var selectedOperatorId = $flowchart.flowchart('getSelectedOperatorId');
@@ -531,3 +535,4 @@ function useReturnData(data){
 </body>
 
 </html>
+<!-- 61 20 6d 61 72 79 2c 20 61 20 71 75 65 73 74 6f 20 70 65 72 69 6f 64 6f 20 64 69 20 69 6e 63 65 72 74 65 7a 7a 65 20 65 64 20 65 6d 6f 7a 69 6f 6e 65 2c 20 61 6c 6c 61 20 6d 69 61 20 76 69 74 61 20 63 68 65 20 6d 69 67 6c 69 6f 72 61 -->
