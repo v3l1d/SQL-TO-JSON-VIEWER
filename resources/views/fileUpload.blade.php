@@ -14,7 +14,7 @@
 
         <div class="panel panel-primary uplodaer">
             <div class="panel-heading">
-                <h2> UPLOAD FILE </h2>
+                <h3>Upload the database you want to note</h3>
             </div>
 
 
