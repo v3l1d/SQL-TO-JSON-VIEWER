@@ -293,9 +293,11 @@ function useReturnData(data){
                   tempId=operatorId;
                   console.log(data);
                   $('#mySidebar').show();
-                  $("#mySidebar").html("<br><button id=\"primary\">Primary</button> <button id=\"secondary\">Secondary</button> <button id=\"crossable\">Crossable</button> <button id=\"reset\">Reset</button><br><hr> <label style=\"display:inline-block; width: 140px;margin-top:30px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>");
+                  $("#mySidebar").html("<br><h3>Types</h3><button id=\"primary\">Primary</button> <button id=\"secondary\">Secondary</button> <button id=\"crossable\">Crossable</button> <button id=\"reset\">Reset</button><br><hr><h3>Rename</h3><label style=\"display:inline-block; width: 140px;margin-top:10px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>"+"<h3>Columns</h3>");
                   var i=0;
+
                   $.each(op['inputs'],function(index,value){
+
                     i++;
                     $('#mySidebar').append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\" id=\"input_"+i+"\"></input><br><br>");
 
@@ -338,7 +340,7 @@ function useReturnData(data){
               $flowchart.flowchart("addClassOperator",opId,"flowchart-secondary");
             });
             $("body").on("click","button[id$=\"reset\"]",function(){
-            
+
             });
 
 
