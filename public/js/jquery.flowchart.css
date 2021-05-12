@@ -325,7 +325,7 @@
 
 
 .flowchart-primary .flowchart-operator-title{
-  background:#F0F0F0; !important
+  background:#FDB8B1; !important
   color: #000000;
   font-weight: bold;
 }
@@ -340,7 +340,7 @@
 
 .flowchart-crossable .flowchart-operator-title{
 
-background:#F0F0F0;
+background:#FFE302;
 color: #000000;
 font-weight: bold;
 }
@@ -353,7 +353,7 @@ font-weight: bold;
 
 
 .flowchart-secondary .flowchart-operator-title{
-  background: #F0F0F0;
+  background: #87CEFA;
   color: #000000;
   font-weight: bold;
 }
