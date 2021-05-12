@@ -108,8 +108,8 @@
 
 .flowchart-operator {
     position: absolute;
-    width: 140px;
-    border: 1px solid #CCCCCC;
+    //width: 140px;
+    border: 2px solid #CCCCCC;
     background: #FAFAFA;
     pointer-events: auto;
 }

@@ -239,22 +239,44 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background-color: pink;
   color: black;
   font-weight: bold;
+  border-radius: 20px;
+  width: 20%;
 }
 
 #secondary{
   background-color: #87CEFA;
   color: black;
   font-weight: bold;
+  border-radius: 20px;
 }
 
 #crossable{
   background-color: yellow;
   color: black;
   font-weight: bold;
+  border-radius: 20px;
 }
 
 #reset{
   background-color: #DCDCDC;
   color: black;
   font-weight: bold;
+  border-radius: 20px;
+  width: 20%;
+}
+
+#primary:hover{
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#secondary:hover{
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#crossable:hover{
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#reset:hover{
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
