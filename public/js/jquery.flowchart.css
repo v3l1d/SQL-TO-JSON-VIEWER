@@ -318,42 +318,42 @@
 .flowchart-primary{
 
   background:#FDB8B1; !important
-  color: black;
+  color: #000000;
   font-weight: bold;
 
 }
 
 
 .flowchart-primary .flowchart-operator-title{
-  background:#FDB8B1; !important
-  color: black;
+  background:#F0F0F0; !important
+  color: #000000;
   font-weight: bold;
 }
 
 
 .flowchart-crossable{
   background: #FFE302;!important
-  color: black;
+  color: #000000;
   font-weight: bold;
 }
 
 
 .flowchart-crossable .flowchart-operator-title{
 
-background:#FFE302;
-color: black;
+background:#F0F0F0;
+color: #000000;
 font-weight: bold;
 }
 
 .flowchart-secondary{
   background:#87CEFA;!important
-  color: black;
+  color: #000000;
   font-weight: bold;
 }
 
 
 .flowchart-secondary .flowchart-operator-title{
-  background: #87CEFA;
-  color: black;
+  background: #F0F0F0;
+  color: #000000;
   font-weight: bold;
 }
