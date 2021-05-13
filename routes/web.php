@@ -18,3 +18,4 @@ Route::post('/', 'fileUploadController@fileUploadPost')->name('file.upload.post'
 Route::get('/visualize', function(){
     return view('visualize');
 });
+Route::get('/conversation',"fileUploadController@conversation")->name("conversation");

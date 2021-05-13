@@ -32,4 +32,9 @@ class FileUploadController extends Controller
         $request->file->storeAs('uploads', $filename);
             return redirect("/visualize");
 }
+
+  public function conversation(){
+    return view('conversation');
+  }
+
 }
