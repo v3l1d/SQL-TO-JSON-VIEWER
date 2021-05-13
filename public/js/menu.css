@@ -236,6 +236,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 /*Button's colors in sidebar*/
 #primary{
+  border: none;
   background-color: pink;
   color: black;
   font-weight: bold;
@@ -244,6 +245,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 #secondary{
+  border: none;
   background-color: #87CEFA;
   color: black;
   font-weight: bold;
@@ -251,6 +253,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 #crossable{
+  border: none;
   background-color: yellow;
   color: black;
   font-weight: bold;
@@ -258,6 +261,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 #reset{
+  border: none;
   background-color: #DCDCDC;
   color: black;
   font-weight: bold;
@@ -267,7 +271,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 #primary:hover{
   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  textarea: pulsante che bho;
 }
 
 #secondary:hover{
@@ -283,7 +286,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 /*Proceed's button*/
-.proceed{
+/*.proceed{
   position: absolute;
   background-color: #008CBA;
   color: white;
@@ -293,12 +296,58 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   right: 8%;
   top: 80%;
   padding: 15px;
-  border-radius:15px;
+  border-radius:35px;
   width: 150px;
+
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
 .proceed:hover{
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+*/
+
+.proceed {
+  position: absolute;
+  background-color: #008CBA;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 150px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  right: 8%;
+  top:80%;
+}
+
+.proceed:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.proceed:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.proceed:hover{
+  background-color: #4CAF50;
+  color: white;
 }
