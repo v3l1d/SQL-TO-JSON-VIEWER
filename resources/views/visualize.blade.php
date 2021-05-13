@@ -556,7 +556,7 @@ function useReturnData(data){
 
     </script>
 
-    <button class="proceed" onclick=window.location="{{route('conversation')}}"> Proceed </button>
+    <button class="proceed" onclick=window.location="{{route('conversation')}}">Proceed</button>
 </body>
 
 

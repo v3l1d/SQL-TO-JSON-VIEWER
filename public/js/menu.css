@@ -234,7 +234,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
 
-/*Button's colors*/
+/*Button's colors in sidebar*/
 #primary{
   background-color: pink;
   color: black;
@@ -279,5 +279,26 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 #reset:hover{
+  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*Proceed's button*/
+.proceed{
+  position: absolute;
+  background-color: #008CBA;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  //z-index: 1;
+  right: 8%;
+  top: 80%;
+  padding: 15px;
+  border-radius:15px;
+  width: 150px;
+}
+
+.proceed:hover{
+  background-color: #4CAF50; /* Green */
+  color: white;
   box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
