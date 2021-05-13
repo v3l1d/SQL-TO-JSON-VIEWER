@@ -17,11 +17,11 @@
             <center> FLA Team </center>
         </h1>
         <h2>
-          Students: Lorenzo Baldari - Alessandro Dilevrano - Fiore Zaccaria
+          Students: Alessandro Dilevrano - Lorenzo Baldari  - Fiore Zaccaria
         </h2>
     </header>
 </head>
     <!--Footer-->
-    
+
 
 </html>

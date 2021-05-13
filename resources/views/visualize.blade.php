@@ -253,7 +253,7 @@ function useReturnData(data){
                   tempId=operatorId;
                   console.log(data);
                   $('#mySidebar').show();
-                  $("#mySidebar").html("<br><h3>Types</h3><button id=\"primary\">Primary</button> <button id=\"secondary\">Secondary</button> <button id=\"crossable\">Crossable</button> <button id=\"reset\">Reset</button><br><hr><h3>Rename</h3><label style=\"display:inline-block; width: 140px;margin-top:10px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>"+"<h3>Columns</h3>");
+                  $("#mySidebar").html("<br><h3>Types</h3><button id=\"primary\">Primary</button> <button id=\"secondary\">Secondary</button> <button id=\"crossable\">Crossable</button> <br><hr><h3>Rename</h3><label style=\"display:inline-block; width: 140px;margin-top:10px;text-align: right;margin-right:10px;\">"+op['title']+"</label>" +"<input type=\"text\" id=\"title\"></input><br><hr>"+"<h3>Columns</h3>");
                   var i=0;
 
                   $.each(op['inputs'],function(index,value){
