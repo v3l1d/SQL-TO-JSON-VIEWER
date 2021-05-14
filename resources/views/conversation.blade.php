@@ -27,9 +27,14 @@
   $(document).ready(function(){
     console.log(dataFromCall);
     for(var i in dataFromCall){
-      $("#mySidebar").html("<br><p>"+dataFromCall[i].name+"</p><br><hr>");
+      $("#mySidebar").append("<br> <button style=\"margin-left:20px;\" id=\""+dataFromCall[i].name+"\">"+dataFromCall[i].name+"</button></br>");
+      for(var j in dataFromCall[i].columns){
+          $("mySidebar").append("<br>"+dataFromCall[i].columns[j].name+"</br>")
+          console.log(dataFromCall[i].columns[j].name);
+      }
     }
   });
+
 
   </script>
 
