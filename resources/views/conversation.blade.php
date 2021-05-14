@@ -30,10 +30,24 @@
       $("#mySidebar").append("<br> <button style=\"margin-left:20px;\" id=\""+dataFromCall[i].name+"\">"+dataFromCall[i].name+"</button></br>");
       for(var j in dataFromCall[i].columns){
           $("mySidebar").append("<br>"+dataFromCall[i].columns[j].name+"</br>")
-          console.log(dataFromCall[i].columns[j].name);
+
       }
     }
+      var extractData;
+      $("#mySidebar").on("click",function(event){
+        var id=event.target.id;
+
+        for( var i in dataFromCall){
+          if(dataFromCall[i].name===id){
+            extractData=dataFromCall[i];
+          }
+        }
+
+      });
+
+      console.log(extractData);
   });
+
 
 
   </script>
