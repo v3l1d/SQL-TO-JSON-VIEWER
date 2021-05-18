@@ -15,9 +15,27 @@
     <link rel="stylesheet" href="./js/jquery.flowchart.css">
     <link rel="stylesheet" href="./js/menu.css">
     <script src="./js/jquery.flowchart.js"></script>
+
+    <!-- navbar -->
+    <ul>
+  <li><a class="active" href="#home">SA-SW</a></li>
+  <li><a href="#news">Salva</a></li>
+  <li><a href="#contact">Apri</a></li>
+  <li><a href="#about">Esporta</a></li>
+</ul>
+
+
+
+
 </head>
 
 <body>
+
+    <div id="text_over">
+    <h2>Organizza il dataset: Rinominca colonne e tabelle e contrassegna le informazioni principali </h2>
+  </div>
+
+  
     <div id="chart_container">
 		<div class="flowchart-example-container" id="flowchartworkspace"></div>
     <div class="w3-sidebar w3-bar-block w3-collapse" style="right:0" id="mySidebar">
@@ -516,7 +534,7 @@ function useReturnData(data){
 
     </script>
 
-    <button class="proceed" onclick=window.location="{{route('conversation')}}">Proceed</button>
+    <button class="proceed" onclick=window.location="{{route('conversation')}}">OK</button>
 </body>
 
 

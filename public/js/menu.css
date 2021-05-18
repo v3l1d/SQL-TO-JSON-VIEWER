@@ -312,19 +312,22 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .proceed {
   position: absolute;
-  background-color: #008CBA;
+  background-color: black;
   border: none;
   font-size: 20px;
   color: #FFFFFF;
-  padding: 20px;
-  width: 150px;
+  padding: 10px;
+  width: 80px;
+  border-radius: 25px;
   text-align: center;
   transition-duration: 0.4s;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
   right: 8%;
-  top:80%;
+  top:1000px;
+
+
 }
 
 .proceed:after {
@@ -350,4 +353,41 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .proceed:hover{
   background-color: #4CAF50;
   color: white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #223047;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+#text_over{
+  //width: 1600px;
+  width: auto;
+  border-top: 25px;
+  text-align: left;
+  margin-top: 40px;
+  margin-left: 8%;
+  margin-right: 7%;
+  outline-width: 400px;
+  background-color: #97b6e8;
+
 }

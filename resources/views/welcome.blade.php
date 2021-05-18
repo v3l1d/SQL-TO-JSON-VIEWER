@@ -13,12 +13,7 @@
 
     <!--Header-->
     <header class="header">
-        <h1>
-            <center> FLA Team </center>
-        </h1>
-        <h2>
-          Students: Alessandro Dilevrano - Lorenzo Baldari  - Fiore Zaccaria
-        </h2>
+
     </header>
 </head>
     <!--Footer-->
