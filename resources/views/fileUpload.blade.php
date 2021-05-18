@@ -5,18 +5,21 @@
 
 <head>
   <ul>
-    <li><a class="active" href="#home">SW-SA</a></li>
-
+    <li><a class="active" href="#home">SA-SW</a></li>
   </ul>
+  <link rel="stylesheet" href="js/menu.css">
+  <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
+
 
     <!--Uploader-->
 
     <div class="uploader center" >
 
-        <div class="panel panel-primary uplodaer">
+        <div class="panel panel-primary uploader">
             <div class="panel-heading">
             <!--  <h3>Upload the database you want to note</h3> -->
             </div>
@@ -27,6 +30,7 @@
                   @csrf
 
                             <input type="file" name="file" class="custom-file-input">
+
                             <button type="submit" class="btn btn-success uploaderBtn">UPLOAD</button>
 
 

@@ -42,12 +42,15 @@ li a {
 }
 
 .uploader {
-    position:fixed;
-
     text-align: center;
     right: 0;
     left: 0;
-    top:300px;
+    top:270px;
+    weight:90%;
+    background-color: #9cb8db;
+    border-radius: 30px;
+    margin: 50px;
+    padding: 70px;
 
 }
 
@@ -68,15 +71,17 @@ li a {
   font-size: 20px;
   font-weight: bold; */
   background-color: #6495ED;
-    border-radius: 8px;
+    border-radius: 100px;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
+    padding: 20px ;
+    //text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 20px;
+    //display: inline-block;
+    font-size: 13px;
+    margin-left: 10px;
     font-weight: bold;
+
+
 }
 .btn:hover{
   background-color: #4CAF50; /* Green */
@@ -109,25 +114,24 @@ h4 {
   visibility: hidden;
 }
 .custom-file-input::before {
-  margin-top: 20%;
-  content: 'Load the database you want to note';
-  display: inline-block;
+  content: 'Load the database';
+  //display: inline-block;
   //background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  background-color: white;
-  //border: 1px solid #999;
-  //border-radius: 3px;
-  //padding: 5px 8px;
+  //background-color: white;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
   text-shadow: 1px 1px #fff;
-  //font-weight: 700;
   font-weight: bold;
   font-size: 15pt;
 
 
+
+
 }
+
+
 .custom-file-input:hover::before {
   border-color: black;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 6px 16px 0 rgba(0,0,0,0.19);
