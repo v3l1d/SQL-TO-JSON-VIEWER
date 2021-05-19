@@ -32,10 +32,10 @@
 <body>
 
     <div id="text_over">
-    <h2>Organizza il dataset: Rinominca colonne e tabelle e contrassegna le informazioni principali </h2>
+    <h2>Organizza il dataset: Rinomina colonne e tabelle e contrassegna le informazioni principali</h2>
   </div>
 
-  
+
     <div id="chart_container">
 		<div class="flowchart-example-container" id="flowchartworkspace"></div>
     <div class="w3-sidebar w3-bar-block w3-collapse" style="right:0" id="mySidebar">

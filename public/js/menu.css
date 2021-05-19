@@ -385,7 +385,9 @@ li a {
   margin-top: 40px;
   margin-left: 8%;
   margin-right: 7%;
-  outline-width: 400px;
+  
   background-color: #97b6e8;
+  border-radius: 20px;
+
 
 }
