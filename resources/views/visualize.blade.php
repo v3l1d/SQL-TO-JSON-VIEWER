@@ -534,8 +534,11 @@ function useReturnData(data){
 
     </script>
 
-    <button class="proceed" onclick=window.location="{{route('conversation')}}">OK</button>
+    <div id="sfondo_bottone">
+  <button class="proceed" onclick=window.location="{{route('conversation')}}">OK</button>
+</div>
 </body>
+
 
 
 

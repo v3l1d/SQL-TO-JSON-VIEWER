@@ -47,7 +47,7 @@ li a {
     left: 0;
     top:270px;
     weight:90%;
-    background-color: #9cb8db;
+    background-color: #d9e6f2;
     border-radius: 30px;
     margin: 50px;
     padding: 70px;
@@ -141,7 +141,7 @@ h4 {
 }
 
 .flowchart-example-container {
-  height: 85%;
+  height: 75%;
   width: 85%;
   background: #d9e6f2;
   //margin-top: 80px;
