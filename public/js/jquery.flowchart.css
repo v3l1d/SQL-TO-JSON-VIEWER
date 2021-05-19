@@ -107,6 +107,7 @@
 /* Default Operator */
 
 .flowchart-operator {
+  border-radius: 15px;
     position: absolute;
     //width: 140px;
     border: 2px solid #CCCCCC;
@@ -130,12 +131,14 @@
     font-weight: bold;
     box-sizing: border-box;
     border-bottom: 1px solid #DDDDDD;
-    background: #F0F0F0;
+    //background: #F0F0F0;
     height: auto;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: move;
+    border-radius: 15px;
+    background-color: #e9eff2;
 }
 
 .flowchart-operator .flowchart-operator-inputs-outputs {
