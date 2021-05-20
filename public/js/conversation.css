@@ -296,3 +296,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .sfondo-bottone:hover{
   background-color: green;
 }
+
+#testo_sidebar{
+  padding-left: 10px;
+  color: black;
+  background-color: #d9e6f2;
+  margin-top: 0;
+}
