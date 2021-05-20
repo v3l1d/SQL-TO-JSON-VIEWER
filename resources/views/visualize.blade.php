@@ -19,9 +19,9 @@
     <!-- navbar -->
     <ul>
   <li><a class="active" href="#home">SA-SW</a></li>
-  <li><a href="#news">Salva</a></li>
-  <li><a href="#contact">Apri</a></li>
-  <li><a href="#about">Esporta</a></li>
+    <button class="sfondo-bottone" id="save">Salva</button>
+    <button id="open">Apri</button>
+    <button id="export">Esporta</button>
 </ul>
 
 
@@ -351,6 +351,11 @@ function useReturnData(data){
 
             });
 
+            $("#save").on("click",function(){
+                var x=$("body").getElementById("flowchart-secondary");
+                console.log(x);
+            })
+
 
             $operatorTitle.keyup(function() {
                 var selectedOperatorId = $flowchart.flowchart('getSelectedOperatorId');
@@ -527,6 +532,8 @@ function useReturnData(data){
 
 
         });
+
+
 
         var defaultFlowchartData = returnedDatas;
         if (false) console.log('remove lint unused warning', defaultFlowchartData);
