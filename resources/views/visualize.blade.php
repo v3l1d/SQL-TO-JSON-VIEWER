@@ -20,8 +20,8 @@
     <ul>
   <li><a class="active" href="#home">SA-SW</a></li>
     <button class="sfondo-bottone" id="save">Salva</button>
-    <button id="open">Apri</button>
-    <button id="export">Esporta</button>
+    <button class="sfondo-bottone" id="open">Apri</button>
+    <button class="sfondo-bottone" id="export">Esporta</button>
 </ul>
 
 

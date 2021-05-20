@@ -389,3 +389,16 @@ li a {
   background-color: #97b6e8;
   border-radius: 20px;
 }
+
+.sfondo-bottone{
+  background-color: #223047;
+  //font-weight:bold;
+  font-size: 15px;
+  padding: 14px 16px;
+  color: white;
+  border: none;
+}
+
+.sfondo-bottone:hover{
+  background-color: green;
+}

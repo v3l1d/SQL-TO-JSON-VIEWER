@@ -279,3 +279,17 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .dropdown a:hover {background-color: #ddd;}
+
+/*  BOTTONI NAVBAR*/
+.sfondo-bottone{
+  background-color: #223047;
+  //font-weight:bold;
+  font-size: 15px;
+  padding: 14px 16px;
+  color: white;
+  border: none;
+}
+
+.sfondo-bottone:hover{
+  background-color: green;
+}
