@@ -322,7 +322,7 @@
 
 .flowchart-primary{
 
-  background:#FDB8B1; !important
+  background:#fee9e6; !important
   color: #000000;
   font-weight: bold;
 
@@ -337,7 +337,7 @@
 
 
 .flowchart-crossable{
-  background: #FFE302;!important
+  background: #fffce6;!important
   color: #000000;
   font-weight: bold;
 }
@@ -351,7 +351,7 @@ font-weight: bold;
 }
 
 .flowchart-secondary{
-  background:#87CEFA;!important
+  background:#e7f5fe;!important
   color: #000000;
   font-weight: bold;
 }
@@ -368,5 +368,3 @@ font-weight: bold;
   top:90%;
   right:60%;
 }
-
-
