@@ -114,7 +114,7 @@ h4 {
   visibility: hidden;
 }
 .custom-file-input::before {
-  content: 'Load the database';
+  content: 'Carica schema Database';
   //display: inline-block;
   //background: linear-gradient(top, #f9f9f9, #e3e3e3);
   //background-color: white;
@@ -125,16 +125,12 @@ h4 {
   text-shadow: 1px 1px #fff;
   font-weight: bold;
   font-size: 15pt;
-
-
-
-
 }
 
 
 .custom-file-input:hover::before {
   border-color: black;
-  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 6px 16px 0 rgba(0,0,0,0.19);
+  //box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 6px 16px 0 rgba(0,0,0,0.19);
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);

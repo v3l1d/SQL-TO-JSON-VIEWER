@@ -14,9 +14,10 @@
 
 <body>
 
+    <h1 id="nuovo">Nuovo</h1>
+
 
     <!--Uploader-->
-
     <div class="uploader center" >
 
         <div class="panel panel-primary uploader">

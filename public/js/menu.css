@@ -402,3 +402,11 @@ li a {
 .sfondo-bottone:hover{
   background-color: green;
 }
+
+
+#nuovo{
+  margin-top:200px;
+  margin-left: 50px;
+  padding-left: 10px;
+  text-decoration: underline;
+}
