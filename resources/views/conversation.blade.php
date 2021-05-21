@@ -49,20 +49,22 @@
       }
 
     }*/
-    for (var i in dataFromCall){
-    $("#mySidebar").append("<br><div class=\"dropdown\" \"><button onclick=\"myFunction()\"class=\"dropbtn\" id=\""+dataFromCall[i].name+"\">"
-    +dataFromCall[i].name+"</button><div id=\"mydropdown\" class=\"dropdown-content\"></div></div><br><hr>")
+    for (var i in dataFromCall){  
+      $("#mySidebar").append("<br><div class=\"dropdown\" \"><button class=\"dropbtn\" id=\""+dataFromCall[i].name+"\">"
+    +dataFromCall[i].name+"</button><div class=\"dropdown-content\" id=\""+dataFromCall[i].name + "_content" +"\"></div></div><br><hr>")
+    $("#"+dataFromCall[i].name+"_content").hide();
+    for(var j in dataFromCall[i].columns){
+    $("#"+dataFromCall[i].name+"_content").append(dataFromCall[i].columns[j].name + "<br>");
+    } 
   }
 
 
-      var extractData;
-      $("#mySidebar").on("click",function(event){
-        var id=event.target.id;
 
-        for( var i in dataFromCall){
-          if(dataFromCall[i].name===id){
-            extractData=dataFromCall[i];
-          }
+      var extractData;
+      $("#mySidebar").click(function(event){
+        var id=event.target.id;
+        if(id!=="mySidebar"){
+          $("#"+id+"_content").show();
         }
 
       });
