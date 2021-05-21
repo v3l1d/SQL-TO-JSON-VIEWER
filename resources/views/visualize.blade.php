@@ -337,14 +337,14 @@ function useReturnData(data){
                 var id=event.target.id;
 
                 var opId=$flowchart.flowchart("getSelectedOperatorId");
-                var data=$flowchart.flowchart("getOperatorData",opId);
-                console.log(id);
+                var data=$flowchart.flowchart("getData");
+                console.log(data);
                 var string="input_";
                 if(string===id.substring(0,6)){ //catch data inside beacuse you have to verify that id is == to input_ and not to casual element of body //V3l1d
                   $("body").on("change","input[id$=\""+id+"\"]",function(event){
                     var val=document.getElementById(id).value;
-                    data['properties']['inputs'][id]['label']=val;
-                    $flowchart.flowchart('setOperatorData',opId,data);
+                    data['operators'][opId]['properties']['inputs'][id]['label']=val;
+                    $flowchart.flowchart('setData',data);
 
                   });
                 }

@@ -322,7 +322,7 @@
 
 .flowchart-primary{
 
-  background:#fee9e6; !important
+  background:#fee9e6 !important; 
   color: #000000;
   font-weight: bold;
 
@@ -330,14 +330,14 @@
 
 
 .flowchart-primary .flowchart-operator-title{
-  background:#FDB8B1; !important
+  background:#FDB8B1 !important; 
   color: #000000;
   font-weight: bold;
 }
 
 
 .flowchart-crossable{
-  background: #fffce6;!important
+  background: #fffce6 !important ;
   color: #000000;
   font-weight: bold;
 }
@@ -345,20 +345,20 @@
 
 .flowchart-crossable .flowchart-operator-title{
 
-background:#FFE302;
+background:#FFE302 !important;
 color: #000000;
 font-weight: bold;
 }
 
 .flowchart-secondary{
-  background:#e7f5fe;!important
-  color: #000000;
+  background:#e7f5fe !important;
+    color: #000000;
   font-weight: bold;
 }
 
 
 .flowchart-secondary .flowchart-operator-title{
-  background: #87CEFA;
+  background: #87CEFA !important;
   color: #000000;
   font-weight: bold;
 }
