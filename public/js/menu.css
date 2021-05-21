@@ -385,9 +385,9 @@ li a {
   margin-top: 40px;
   margin-left: 8%;
   margin-right: 7%;
-
   background-color: #97b6e8;
   border-radius: 20px;
+  padding-left: 6px;
 }
 
 .sfondo-bottone{
