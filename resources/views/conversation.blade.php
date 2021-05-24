@@ -21,9 +21,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <body>
   <h3 id="testo_sidebar"> ▶ Database Overview</h3>
- <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="width:15%">
+<div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="width:15%">
 
-</div>
+</div> 
+
+
+
 
   <script type="text/javascript">
   var dataFromCall;
@@ -39,38 +42,57 @@
 
 
   $(document).ready(function(){
-    console.log(dataFromCall);
-    /*for(var i in dataFromCall){
-
-      $("body").append("<br> <div class=\"dropdown\" id=\""+dataFromCall[i].name+"\">"+dataFromCall[i].name+"<div id=\"dropdown-content\"><p></p></div></div></br>");
+    
+    
+    for(var i in dataFromCall){
+      $("#mySidebar").append("<button type=\"button \"class=\"collapsible\">"+dataFromCall[i].name+"</button>");
+      $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].name+"_content"+"\"></div>");
+      $("#mySidebar").append("<br>");
       for(var j in dataFromCall[i].columns){
-       //   $("mySidebar").append("<br>"+dataFromCall[i].columns[j].name+"</br>")
-
+        $("#"+dataFromCall[i].name+"_content").append(dataFromCall[i].columns[j].name+"<br>");
       }
+    }
+  
+/*
+    for (var k in dataFromCall){
+      $("body").append("<button type=\"button\" class=\"collapsible\" id=\""+dataFromCall[k].name+"\">"+dataFromCall[k].name+"</button><br>");
+        $("body").append("<div class=\"content\" id=\""+dataFromCall[k].name+"_content"+"\"><p>"+dataFromCall[k].columns+"</p></div>");
+    
+      
+    }
 
-    }*/
-    for (var i in dataFromCall){  
-      $("#mySidebar").append("<br><div class=\"dropdown\" \"><button class=\"dropbtn\" id=\""+dataFromCall[i].name+"\">"
-    +dataFromCall[i].name+"</button><div class=\"dropdown-content\" id=\""+dataFromCall[i].name + "_content" +"\"></div></div><br><hr>")
-    $("#"+dataFromCall[i].name+"_content").hide();
-    for(var j in dataFromCall[i].columns){
-    $("#"+dataFromCall[i].name+"_content").append(dataFromCall[i].columns[j].name + "<br>");
-    } 
-  }
-
-
-
-      var extractData;
-      $("#mySidebar").click(function(event){
-        var id=event.target.id;
-        if(id!=="mySidebar"){
-          $("#"+id+"_content").show();
+*/
+  
+$("body").click(function(event){
+      classId=event.target.id;
+      console.log(classId);
+      var flag=0;
+      for(var i in dataFromCall){
+        if(classId===dataFromCall[i].name){
+          flag=1;
         }
+      }
+      if(flag===1){
+        $("#"+dataFromCall[i].name+"_content").show();
+      }
+});
 
-      });
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-      console.log(extractData);
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
   });
+}
+
+    });
 
 
 
