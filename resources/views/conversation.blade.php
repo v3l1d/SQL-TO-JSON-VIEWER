@@ -21,9 +21,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <body>
   <h3 id="testo_sidebar"> ▶ Database Overview</h3>
-<div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="width:15%">
+<div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="width:14%; overflow:scroll;">
 
-</div> 
+</div>
 
 
 
@@ -42,8 +42,8 @@
 
 
   $(document).ready(function(){
-    
-    
+
+
     for(var i in dataFromCall){
       $("#mySidebar").append("<button type=\"button \"class=\"collapsible\">"+dataFromCall[i].name+"</button>");
       $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].name+"_content"+"\"></div>");
@@ -52,17 +52,17 @@
         $("#"+dataFromCall[i].name+"_content").append(dataFromCall[i].columns[j].name+"<br>");
       }
     }
-  
+
 /*
     for (var k in dataFromCall){
       $("body").append("<button type=\"button\" class=\"collapsible\" id=\""+dataFromCall[k].name+"\">"+dataFromCall[k].name+"</button><br>");
         $("body").append("<div class=\"content\" id=\""+dataFromCall[k].name+"_content"+"\"><p>"+dataFromCall[k].columns+"</p></div>");
-    
-      
+
+
     }
 
 */
-  
+
 $("body").click(function(event){
       classId=event.target.id;
       console.log(classId);

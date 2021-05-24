@@ -31,7 +31,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
 h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
 .w3-serif{font-family:serif}.w3-sans-serif{font-family:sans-serif}.w3-cursive{font-family:cursive}.w3-monospace{font-family:monospace}
-h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;/*margin:10px 0*/margin-bottom: 0;}.w3-wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
@@ -57,7 +57,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
 .w3-dropdown-content{cursor:auto;color:#000;background-color:#fff;display:none;position:absolute;min-width:160px;margin:0;padding:0;z-index:1}
 .w3-check,.w3-radio{width:24px;height:24px;position:relative;top:6px}
-.w3-sidebar{width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:inherit;padding-right:250px;padding-left: 3%;}
+.w3-sidebar{width:100%;/*position:fixed!important;*/z-index:1;padding-left: 10px;background-color: #d9e6f2;height: 100%;padding-right: 1%; margin-top: 0;position:fixed; overflow-y: auto;}
 .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
 .w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
 .w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
@@ -263,25 +263,37 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 }
 
 .collapsible {
-  background-color: #777;
-  color: white;
+  background-color: #00cc66;
+  color: black;
+  font-weight: bold;
   cursor: pointer;
-  padding: 18px;
-  width: 227px;
+  padding: 14px;
+  //width: 227px;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
+  margin-top: 3%;
+  border-radius: 25px;
+  width: 100%;
+
 }
 
+/*
 .active, .collapsible:hover {
-  background-color: #555;
+  background-color: #00cc66;
 }
-
+*/
 .content {
-  padding: 0 18px;
+  //padding: 0 18px;
+  padding: 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
-}
+  background-color: #33ff99;
+  border-radius: 25px;
+  width: 88%;
+  text-align: left;
+  font-size: 13px;
+  font-weight: bold;
 
+}
