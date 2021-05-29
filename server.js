@@ -1,11 +1,20 @@
 const port = 3000;
+const port2=5000;
+const port3=4000;
 var express = require("express");
+const bodyparser=require("body-parser");
 var fs = require("fs");
 const { Parser } = require("sql-ddl-to-json-schema");
 const { getLatestFileName } = require("./resources/js/fileNameController");
+const cors=require("cors");
 
 const parser = new Parser("mysql");
 var app = express();
+
+app.use(cors());
+app.use(bodyparser.urlencoded());
+app.use(bodyparser.json());
+
 
 app.get("/", function(req, res) {
 
@@ -39,6 +48,28 @@ app.get("/", function(req, res) {
     //res.send(file);
 });
 
+
+
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
+
+app.listen(port2,function(data){
+    console.log(data);
+});
+
+var mydata;
+
+app.post("/",function(req,res){
+ // console.log("body:" + JSON.stringify(req.body));
+    mydata=JSON.parse(JSON.stringify(req.body));
+    console.log(mydata['operators']['operator1']);
+
+    
+});
+
+
+console.log(mydata);
+
+
+

@@ -201,6 +201,7 @@ function useReturnData(data){
 };
 
 
+      var dataToSend;
 
 
         /* global $ */
@@ -288,7 +289,8 @@ function useReturnData(data){
                 onOperatorUnselect: function() {
                     $operatorProperties.hide();
                     $('#mySidebar').hide();
-
+                    dataToSend=$flowchart.flowchart('getData');
+                    sendData(dataToSend);
                     return true;
                 },
                 onLinkSelect: function(linkId) {
@@ -305,17 +307,26 @@ function useReturnData(data){
             $("body").on("click","button[id$=\"primary\"]",function(){ //v3l1d
                 var opId=$flowchart.flowchart('getSelectedOperatorId');
                 $flowchart.flowchart("addClassOperator",opId,"flowchart-primary");
+                var data=$flowchart.flowchart('getData');
+                data['operators'][opId]['properties']['class']='flowchart-primary';
+                $flowchart.flowchart('setData',data);
 
             });
 
             $("body").on("click","button[id$=\"crossable\"]",function(){ //v3l1d table crossable color changer
                 var opId=$flowchart.flowchart('getSelectedOperatorId');
                 $flowchart.flowchart("addClassOperator",opId,"flowchart-crossable");
+                var data=$flowchart.flowchart('getData');
+                data['operators'][opId]['properties']['class']='flowchart-crossable';
+                $flowchart.flowchart('setData',data);
             });
 
             $("body").on("click","button[id$=\"secondary\"]",function(){
               var opId=$flowchart.flowchart('getSelectedOperatorId');
               $flowchart.flowchart("addClassOperator",opId,"flowchart-secondary");
+              var data=$flowchart.flowchart('getData');
+                data['operators'][opId]['properties']['class']='flowchart-secondary';
+                $flowchart.flowchart('setData',data);
             });
 
 
@@ -530,6 +541,14 @@ function useReturnData(data){
             //--- save and load
             //-----------------------------------------
 
+        function sendData(data){
+        $.ajax({
+            url:"http://localhost:5000",
+            method:"POST",
+            dataType:"json",
+            data:dataToSend
+        });
+        }
 
         });
 
@@ -542,7 +561,7 @@ function useReturnData(data){
     </script>
 
     <div id="sfondo_bottone">
-  <button class="proceed" onclick=window.location="{{route('conversation')}}">OK</button>
+  <button class="proceed" type="submit" onclick=window.location="{{route('conversation')}}">OK</button>
 </div>
 </body>
 
