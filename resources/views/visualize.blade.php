@@ -545,7 +545,7 @@ function useReturnData(data){
         $.ajax({
             url:"http://localhost:5000",
             method:"POST",
-            dataType:"json",
+            dataType:"application/json",
             data:dataToSend
         });
         }

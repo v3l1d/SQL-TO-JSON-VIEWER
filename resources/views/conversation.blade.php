@@ -29,28 +29,35 @@
 
 
   <script type="text/javascript">
+  var dataExported;
   var dataFromCall;
+  
   $.ajax({
     method:'GET',
-    url:'http://localhost:3000',
+    url:'http://localhost:5000',
     async:false,
     success:function(data){
+     // dataFromCall=data;
       dataFromCall=data;
     }
 
   });
 
-
   $(document).ready(function(){
-
-
+    console.log(dataFromCall);
+    console.log(dataFromCall);
+    
+    
     for(var i in dataFromCall){
-      $("#mySidebar").append("<button type=\"button \"class=\"collapsible\">"+dataFromCall[i].name+"</button>");
-      $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].name+"_content"+"\"></div>");
+      $("#mySidebar").append("<button type=\"button \"class=\"collapsible\">"+dataFromCall[i].properties.title+"</button>");
+      $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].properties.title+"_content"+"\"></div>");
       $("#mySidebar").append("<br>");
-      for(var j in dataFromCall[i].columns){
-        $("#"+dataFromCall[i].name+"_content").append(dataFromCall[i].columns[j].name+"<br>");
+      for(var j in dataFromCall[i].properties.inputs){
+        $("#"+dataFromCall[i].properties.title+"_content").append(dataFromCall[i].properties.inputs[j].label+"<br>");
+
+        console.log(dataFromCall[i].name);
       }
+
     }
 
 /*

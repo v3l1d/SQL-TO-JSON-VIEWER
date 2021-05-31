@@ -10,10 +10,10 @@ const cors=require("cors");
 
 const parser = new Parser("mysql");
 var app = express();
-
-app.use(cors());
-app.use(bodyparser.urlencoded());
-app.use(bodyparser.json());
+var app2=express();
+app2.use(cors());
+app2.use(bodyparser.urlencoded());
+app2.use(bodyparser.json());
 
 
 app.get("/", function(req, res) {
@@ -54,22 +54,26 @@ app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
 });
 
-app.listen(port2,function(data){
-    console.log(data);
+
+
+
+
+var data;
+app2.post("/",function(req,res){
+  console.log("body:" + JSON.stringify(req.body));
+  data=req.body;
+    res.end();
+
 });
 
-var mydata;
-
-app.post("/",function(req,res){
- // console.log("body:" + JSON.stringify(req.body));
-    mydata=JSON.parse(JSON.stringify(req.body));
-    console.log(mydata['operators']['operator1']);
-
-    
+app2.get("/",function(req,res){
+    res.send(data['operators']);
 });
 
+app2.listen(port2,function(data){
+    console.log("Receveing on 5000");
+});
 
-console.log(mydata);
 
 
 
