@@ -277,6 +277,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   border-radius: 25px;
   width: 100%;
 
+
 }
 
 /*
@@ -291,10 +292,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   overflow: hidden;
   background-color: #33ff99;
   border-radius: 25px;
-  width: 88%;
+  //width: 88%;
   text-align: left;
   font-size: 13px;
   font-weight: bold;
+  margin-top: 4px;
+  max-width: 227px;
+  border: solid 2px grey;
 
 }
 
