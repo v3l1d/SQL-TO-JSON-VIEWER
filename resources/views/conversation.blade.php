@@ -37,7 +37,6 @@
     url:'http://localhost:5000',
     async:false,
     success:function(data){
-     // dataFromCall=data;
       dataFromCall=data;
     }
 
@@ -49,7 +48,7 @@
     
     
     for(var i in dataFromCall){
-      $("#mySidebar").append("<button type=\"button \"class=\"collapsible\">"+dataFromCall[i].properties.title+"</button>");
+      $("#mySidebar").append("<button type=\"button \"class=\"collapsible\" id=\""+dataFromCall[i].properties.title+"\">"+dataFromCall[i].properties.title+"</button>");
       $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].properties.title+"_content"+"\"></div>");
       $("#mySidebar").append("<br>");
       for(var j in dataFromCall[i].properties.inputs){
@@ -57,7 +56,19 @@
 
         console.log(dataFromCall[i].name);
       }
-
+      if(dataFromCall[i].properties.class==="flowchart-primary"){
+        console.log("ok");
+        $("#"+dataFromCall[i].properties.title).addClass("collapsible-primary");
+        $("#"+dataFromCall[i].properties.title+"_content").addClass("content-primary");
+      }
+      if(dataFromCall[i].properties.class==="flowchart-secondary"){
+        $("#"+dataFromCall[i].properties.title).addClass("collapsible-secondary");
+        $("#"+dataFromCall[i].properties.title+"_content").addClass("content-secondary");
+      }
+      if(dataFromCall[i].properties.class=="flowchart-crossable"){
+        $("#"+dataFromCall[i].properties.title).addClass("collapsible-crossable");
+        $("#"+dataFromCall[i].properties.title+"_content").addClass("content-crossable");
+      }
     }
 
 /*

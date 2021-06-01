@@ -68,6 +68,7 @@ app2.post("/",function(req,res){
 
 app2.get("/",function(req,res){
     res.send(data['operators']);
+    res.end();
 });
 
 app2.listen(port2,function(data){

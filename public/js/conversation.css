@@ -297,3 +297,27 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   font-weight: bold;
 
 }
+
+.collapsible-primary{
+  background-color:#FDB8B1 !important;
+}
+
+.content-primary{
+  background-color:#fee9e6 !important;
+}
+
+.collapsible-secondary{
+  background-color:#87CEFA!important;
+}
+
+.content-secondary{
+  background-color:#e7f5fe!important;
+}
+
+.collapsible-crossable{
+  background-color:#FFE302 !important;
+}
+
+.content-crossable{
+  background:#fffce6 !important;
+}
