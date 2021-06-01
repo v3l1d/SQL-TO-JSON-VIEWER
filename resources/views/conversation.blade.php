@@ -71,16 +71,6 @@
       }
     }
 
-/*
-    for (var k in dataFromCall){
-      $("body").append("<button type=\"button\" class=\"collapsible\" id=\""+dataFromCall[k].name+"\">"+dataFromCall[k].name+"</button><br>");
-        $("body").append("<div class=\"content\" id=\""+dataFromCall[k].name+"_content"+"\"><p>"+dataFromCall[k].columns+"</p></div>");
-
-
-    }
-
-*/
-
 $("body").click(function(event){
       classId=event.target.id;
       console.log(classId);
