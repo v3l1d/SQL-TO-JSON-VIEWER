@@ -62,6 +62,7 @@
     @extends('welcome')
 
     <script type="text/javascript">
+        
         $.ajax({
             method: 'GET',
             url: 'http://localhost:3000',
@@ -209,7 +210,7 @@ function useReturnData(data){
           //  console.log(JSON.stringify(returnedDatas));
             var $flowchart = $('#flowchartworkspace');
             var $container = $flowchart.parent();
-
+            
 
 
             // Apply the plugin on a standard, empty div...

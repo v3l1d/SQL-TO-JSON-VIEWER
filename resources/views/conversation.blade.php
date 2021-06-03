@@ -21,10 +21,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <body>
   <h3 id="testo_sidebar"> ▶ Database Overview</h3>
-<div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="width:14%; overflow:scroll;">
+<div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
-
+<div class="container">
+<div class="middlepane" id="showvalues"></div>
+</div>
 
 
 
@@ -86,6 +88,18 @@ $("body").click(function(event){
       }
 });
 
+
+
+$("body").on("click",function(event){
+  var id=event.target.id;
+  var flag=0;
+  for(var i in dataFromCall){
+    if(id===dataFromCall[i].properties.title){
+      flag=1;
+    $("#showvalues").append("Mostrami:  <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button><br>");
+    }
+  }
+});
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
