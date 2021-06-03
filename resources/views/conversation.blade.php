@@ -55,9 +55,8 @@
       $("#mySidebar").append("<br>");
       for(var j in dataFromCall[i].properties.inputs){
         $("#"+dataFromCall[i].properties.title+"_content").append(dataFromCall[i].properties.inputs[j].label+"<br>");
-      }
-      for(var k in dataFromCall[i].properties.outputs){
-        $("#"+dataFromCall[i].properties.title+"_content").append(dataFromCall[i].properties.outputs[k].label+"<br>");
+
+        console.log(dataFromCall[i].name);
       }
       if(dataFromCall[i].properties.class==="flowchart-primary"){
         console.log("ok");
@@ -72,7 +71,7 @@
         $("#"+dataFromCall[i].properties.title).addClass("collapsible-crossable");
         $("#"+dataFromCall[i].properties.title+"_content").addClass("content-crossable");
       }
-    } 
+    }
 
 $("body").click(function(event){
       classId=event.target.id;
