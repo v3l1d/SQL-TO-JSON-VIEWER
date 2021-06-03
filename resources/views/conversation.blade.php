@@ -24,6 +24,7 @@
 <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
+<p id="testo_container">Negli esempi seguenti, clicca le parti del discorso evidenziate per modificarle con i vocabili che ritieni userebbe l'utente. A ciascuna parte evidenziata associa i dati che desideri siano restituiti come risposta.</p> 
 <div class="container">
 <div class="middlepane" id="showvalues"></div>
 </div>
@@ -33,7 +34,7 @@
   <script type="text/javascript">
   var dataExported;
   var dataFromCall;
-  
+
   $.ajax({
     method:'GET',
     url:'http://localhost:5000',
@@ -47,8 +48,8 @@
   $(document).ready(function(){
     console.log(dataFromCall);
     console.log(dataFromCall);
-    
-    
+
+
     for(var i in dataFromCall){
       $("#mySidebar").append("<button type=\"button \"class=\"collapsible\" id=\""+dataFromCall[i].properties.title+"\">"+dataFromCall[i].properties.title+"</button>");
       $("#mySidebar").append("<div class=\"content\" id=\""+dataFromCall[i].properties.title+"_content"+"\"></div>");
@@ -72,7 +73,7 @@
         $("#"+dataFromCall[i].properties.title).addClass("collapsible-crossable");
         $("#"+dataFromCall[i].properties.title+"_content").addClass("content-crossable");
       }
-    } 
+    }
 
 $("body").click(function(event){
       classId=event.target.id;

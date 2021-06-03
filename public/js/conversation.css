@@ -329,16 +329,46 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .container{
   float:center;
   border-color:black;
+
 }
 .middlepane {
   width: 50%;
   margin-left:20%;
   height: 100%;
-  background-color:white;
+  //background-color:#d9e6f2;
   border-color:black;
   border-style:solid;
   border-collapse: collapse;
+
+
+  margin-top: 10px;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  margin-left: 320px;
+  max-width: 740px;
+  min-height: 700px;
+  overflow-y:auto;
+
+
 }
 
 button.link { background:none;border:none; }
 
+
+#testo_container{
+  background-color: #d9e6f2;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  color:black;
+  padding: 20px;
+
+
+  border-color: black;
+  border-radius: 25px;
+
+  margin-left: 320px;
+  max-width: 700px;
+}
