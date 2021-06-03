@@ -282,7 +282,11 @@ function useReturnData(data){
 
 
                   });
+                  var j=1;
+                  $.each(op['outputs'],function(index,value){
+                    $("#mySidebar").append("<label style=\"display:inline-block; width: 140px;text-align: right;margin-right:10px;\">"+value['label']+"</label>" +"<input type=\"text\" id=\"output_"+j+"\"></input><br><br>");
 
+                  });
 
                     return true;
                 },
@@ -360,6 +364,18 @@ function useReturnData(data){
                   });
                 }
 
+            });
+
+            $("body").on("click",function(event){
+                var id=event.target.id;
+                var opId=$flowchart.flowchart("getSelectedOperatorId");
+                var data=$flowchart.flowchart('getData');
+                string="output_";
+                if(string==id.substring(0,7)){
+                    var val=document.getElementById(id).value;
+                    data['operators'][opId]['properties']['outputs'][id]['label']=val;
+                    $flowchart.flowchart('setData',data);
+                }
             });
 
             $("#save").on("click",function(){
