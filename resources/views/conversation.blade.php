@@ -99,8 +99,26 @@ $("body").on("click",function(event){
       flag=1;
     $("#showvalues").append("Mostrami:  <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button><br>");
     }
+    }
+});
+
+
+$("body").on("click",function(event){
+  var id=event.target.id;
+  var lenght=id.length;
+  console.log(lenght);
+  var string="_values";
+  if(id.substring((lenght-7),lenght)==="_values"){
+    for(var i in dataFromCall){
+      if(dataFromCall[i].properties.title===id.substring(0,(lenght-7))){
+        console.log("ok");
+        for(var j in dataFromCall[i].properties.inputs){
+          $("#showvalues").append(dataFromCall[i].properties.inputs[j].label+"<br>");
+        } }
+    }
   }
 });
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
