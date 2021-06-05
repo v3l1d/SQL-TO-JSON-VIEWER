@@ -363,6 +363,9 @@ button.link { background:light-blue;border-style:radius; }
   margin: 4px;
 
 }
+.link:hover{
+  background-color:orange;
+}
 
 #testo_container{
   background-color: #d9e6f2;
