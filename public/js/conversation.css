@@ -354,6 +354,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 button.link { background:light-blue;border-style:radius; }
 
+.link{
+  background-color: #97b6e8;
+  border-radius: 25px;
+  color: black;
+  //padding: 6px;
+  border-style: none;
+  margin: 4px;
+
+}
 
 #testo_container{
   background-color: #d9e6f2;
