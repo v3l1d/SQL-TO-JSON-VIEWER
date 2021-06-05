@@ -97,7 +97,7 @@ $("body").on("click",function(event){
   for(var i in dataFromCall){
     if(id===dataFromCall[i].properties.title){
       flag=1;
-    $("#showvalues").append("Mostrami:  <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button><br>");
+    $("#showvalues").append("<div style=\"margin-left:15px\">Mostrami:     <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button></div><br>");
     }
     }
 });
@@ -113,8 +113,12 @@ $("body").on("click",function(event){
       if(dataFromCall[i].properties.title===id.substring(0,(lenght-7))){
         console.log("ok");
         for(var j in dataFromCall[i].properties.inputs){
-          $("#showvalues").append(dataFromCall[i].properties.inputs[j].label+"<br>");
-        } }
+          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" > • "+dataFromCall[i].properties.inputs[j].label+"</button></div>");
+        }
+      
+        $("#showvalues").append("<br>");
+         }
+        
     }
   }
 });
