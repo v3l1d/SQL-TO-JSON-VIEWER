@@ -352,6 +352,21 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 }
 
+
+
+
+
+.rightpane {
+  width: 25%;
+  background-color:#d9e6f2;
+  height: 100%;
+  float: right;
+  border-collapse: collapse;
+  overflow:auto;
+  border-color:black;
+  border-style:solid;
+}
+
 button.link { background:light-blue;border-style:radius; }
 
 .link{
@@ -364,7 +379,7 @@ button.link { background:light-blue;border-style:radius; }
 
 }
 .link:hover{
-  background-color:orange;
+  background-color:orange;2
 }
 
 #testo_container{

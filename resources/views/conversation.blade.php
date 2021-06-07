@@ -20,10 +20,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <body>
-  <h3 id="testo_sidebar"> ▶ Database Overview &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Conversation editor &nbsp&nbsp Property Editor</h3>
+  <h3 id="testo_sidebar"> ▶ Database Overview &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Conversation editor &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp                                           Property Editor</h3>
 <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
+<div class="w3-sidebar w3-light-grey w3-bar-block" id="valuesbar" style="position:absolute; right:0px; width:25%; background-color:white; border-color:grey; border-style:solid; margin-top:20px; heigth:100%; overflow:scroll;"></div>
 <p id="testo_container">Negli esempi seguenti, clicca le parti del discorso evidenziate per modificarle con i vocabili che ritieni userebbe l'utente. A ciascuna parte evidenziata associa i dati che desideri siano restituiti come risposta.</p>
 <div class="container">
 <div class="middlepane" id="showvalues"></div>
@@ -113,7 +114,8 @@ $("body").on("click",function(event){
       if(dataFromCall[i].properties.title===id.substring(0,(lenght-7))){
         console.log("ok");
         for(var j in dataFromCall[i].properties.inputs){
-          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" > • "+dataFromCall[i].properties.inputs[j].label+"</button></div>");
+          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" id=\""+dataFromCall[i].properties.inputs[j].label+"\"  > • "+dataFromCall[i].properties.inputs[j].label+"</button></div>");
+
         }
       
         $("#showvalues").append("<br>");
@@ -122,6 +124,14 @@ $("body").on("click",function(event){
     }
   }
 });
+
+var catchId;
+$("body").on("click",function(event){
+  var id=event.target.id;
+  console.log(id);
+});
+
+$("#valuesbar").append("ciaocaio");
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -137,6 +147,8 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
 
     });
 
