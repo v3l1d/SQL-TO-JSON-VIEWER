@@ -46,9 +46,11 @@ function testAjax() {
             operators.forEach(function(item) {
                 let j = 1;
                 let k = 1;
+                max=Math.ceil(100);
+                min=Math.floor(1);
                 data["operators"][operator] = {};
-                data["operators"][operator]["top"] = Math.random() * 600;
-                data["operators"][operator]["left"] = Math.random() * 1500;
+                data["operators"][operator]["top"] = Math.random() * (max - min) + min;
+                data["operators"][operator]["left"] = Math.random() * (max - min) + min;
                 data["operators"][operator]["properties"] = {};
                 data["operators"][operator]["properties"]["title"] = item.name;
                 data["operators"][operator]["properties"]["inputs"] = {};
