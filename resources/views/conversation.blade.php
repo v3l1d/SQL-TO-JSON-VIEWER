@@ -24,7 +24,9 @@
 <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
-<div class="w3-sidebar w3-light-grey w3-bar-block" id="valuesbar" style="position:absolute; right:0px; width:25%; background-color:white; border-color:grey; border-style:solid; margin-top:20px; heigth:100%; overflow:scroll;"></div>
+<div class="sidebar_chat" id="valuesbar" style="position:absolute; right:0px; width:43%; background-color:#d9e6f2;  border-style:none; margin-top:0px; heigth:200px; height: 836px; overflow-y:scroll;"></div>
+
+
 <p id="testo_container">Negli esempi seguenti, clicca le parti del discorso evidenziate per modificarle con i vocabili che ritieni userebbe l'utente. A ciascuna parte evidenziata associa i dati che desideri siano restituiti come risposta.</p>
 <div class="container">
 <div class="middlepane" id="showvalues"></div>
