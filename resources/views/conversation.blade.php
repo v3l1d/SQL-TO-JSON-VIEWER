@@ -24,7 +24,7 @@
 <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
-<div class="sidebar_chat" id="valuesbar" style="position:absolute; right:0px; width:43%; background-color:#d9e6f2;  border-style:none; margin-top:0px; heigth:200px; height: 836px; overflow-y:scroll;"></div>
+<div class="sidebar_chat" id="valuesbar" style="position:absolute; right:0px; width:30%; background-color:white;  border-style:none; margin-top:0px; heigth:200px; height: 836px; overflow-y:scroll;"></div>
 
 
 <p id="testo_container">Negli esempi seguenti, clicca le parti del discorso evidenziate per modificarle con i vocabili che ritieni userebbe l'utente. A ciascuna parte evidenziata associa i dati che desideri siano restituiti come risposta.</p>
@@ -100,7 +100,7 @@ $("body").on("click",function(event){
   for(var i in dataFromCall){
     if(id===dataFromCall[i].properties.title){
       flag=1;
-    $("#showvalues").append("<div style=\"margin-left:15px\">Mostrami:     <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button></div><br>");
+    $("#showvalues").append("<div style=\"margin-left:15px\">Mostrami:     <button class=\"link\" id=\""+dataFromCall[i].properties.title+"_values\">"+dataFromCall[i].properties.title+"</button></div>");
     }
     }
 });
@@ -115,9 +115,14 @@ $("body").on("click",function(event){
     for(var i in dataFromCall){
       if(dataFromCall[i].properties.title===id.substring(0,(lenght-7))){
         console.log("ok");
+        $("#showvalues").append("<div style=\"margin-left:15px;color:#223047; \">Seleziona le tabelle che vuoi che ti vengano mostrate in risposta:</div><br>")
         for(var j in dataFromCall[i].properties.inputs){
-          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" id=\""+dataFromCall[i].properties.inputs[j].label+"\"  > • "+dataFromCall[i].properties.inputs[j].label+"</button></div>");
+          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" id=\""+dataFromCall[i].properties.inputs[j].label+"_"+id.substring(0,(lenght-7))+"\"  > • "+dataFromCall[i].properties.inputs[j].label+"</button></div>");
 
+        }
+        for( var l in dataFromCall[i].properties.outputs){
+          $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" id=\""+dataFromCall[i].properties.outputs[l].label+"_"+id.substring(0,(lenght-7))+"\"  > • "+dataFromCall[i].properties.outputs[l].label+"</button></div>");
+          
         }
 
         $("#showvalues").append("<br>");
@@ -133,7 +138,6 @@ $("body").on("click",function(event){
   console.log(id);
 });
 
-$("#valuesbar").append("ciaocaio");
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -151,6 +155,194 @@ for (i = 0; i < coll.length; i++) {
 }
 
 
+$("body").on("click",function(event){
+  var id=event.target.id;
+  var string="_values";
+  var len=id.length;
+  if(id.substring((len-7),len)===string){
+    switch(id){
+      case "eroe_values":
+        $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var id=event.target.id;
+          switch(id){
+            case "cod_mortale_eroe":
+             $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_mortale:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">1234</div>");
+              break;
+            case "nome_eroe":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">nome:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">Sansone</div>");
+            break;
+            case "forza_eroe":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">forza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">5</div>");
+              break;
+            case "intelligenza_eroe":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">intelligenza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">8</div>");
+              break;
+
+            case "destrezza_eroe":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+id.substring(0,9)+":</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">10</div>");
+            break;
+          }
+        });
+        break;
+
+        case "mostro_values":
+
+        $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var id=event.target.id;
+          switch(id){
+            case "cod_mortale_mostro":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_mortale:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">mos24</div>");
+            break;
+            case "nome_mostro":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">nome:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">Troll</div>");
+            break;
+            case "forza_mostro":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">forza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">4</div>");
+            break;
+            case "intelligenza_mostro":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">intelligenza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">1</div>");
+            break;
+            case "destrezza_mostro":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">destrezza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">5</div>");
+            break;
+          }
+        });
+        break;
+
+        case "arma_values":
+              $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var id=event.target.id;
+          switch(id){
+            case "cod_oggetto_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_oggetto:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">weapon42</div>");
+            break;
+            case "nome_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">nome:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">alabarda</div>");
+            break;
+            case "peso_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">peso:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">5</div>");
+            break;
+            case "danno_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">danno:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">9</div>");
+            break;
+            case "raggio_min_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">raggio_min:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">1</div>");
+            break;
+            case "raggio_max_arma":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">raggio_max:</div>");
+            $("#valuesbar").append("<div style=\"margin-left:15px;\">2</div>");
+            break;
+          }
+          
+        });
+        break;
+
+        case "elemento_protettivo_values":
+
+          $("#valuesbar").append("<br>");
+          $("#showvalues").on("click",function(event){
+            var id=event.target.id;
+            switch(id){
+              case "cod_oggetto_elemento_protettivo":
+                $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+id+":</div>");
+                $("#valuesbar").append("<div style=\"margin-left:15px;\">armour12</div>");
+              break;
+              case "nome_elemento_protettivo":
+                $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+id+":</div>");
+                $("#valuesbar").append("<div style=\"margin-left:15px;\">armatura d'argento</div>");
+            break;
+            case "peso_elemento_protettivo":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+id+":</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">12</div>");
+              break;
+            case "resistenza_elemento_protettivo":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+id+":</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">20</div>");
+              break;
+            }
+
+          });
+        break;
+
+        case "equipaggiamento_values":
+
+          $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var id=event.target.id;
+          switch(id){
+            case "cod_oggetto_equipaggiamento":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_oggetto:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">armour12</div>");
+              break;
+            case "cod_eroe_equipaggiamento":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_eroe</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">1234</div>");
+            break;
+
+          }
+        });
+        break;
+        case "divinita_values":
+
+          $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var id=event.target.id;
+          switch(id){
+            case "cod_divinita_divinita":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_divinita:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">god32</div>");
+            break;
+            case "nome_divinita":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">nome:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">Nettuno</div>");
+            break;
+            case "influenza_divinita":
+              $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">influenza:</div>");
+              $("#valuesbar").append("<div style=\"margin-left:15px;\">15</div>");
+            break;
+          }
+        });
+        break;
+
+        case "protezione_divina_values":
+
+          $("#valuesbar").append("<br>");
+        $("#showvalues").on("click",function(event){
+          var ids=event.target.id;
+          switch(ids){
+            case "cod_mortale_protezione_divina":
+            $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">"+ids.substring(0,11)+":</div>");
+            $("#valuesbar").append("<div style=\"margin-left:15px;\">1234</div>");
+            break;
+            case "cod_divinita_protezione_divina":
+            $("#valuesbar").append("<div style=\"margin-left:15px;font-size:15px;font-weight:bold;color:orange;\">cod_divinita:</div>");
+            $("#valuesbar").append("<div style=\"margin-left:15px;\">god32</div>");
+              break;
+          }
+        });
+        break;
+
+    }
+  }
+});
 
     });
 
