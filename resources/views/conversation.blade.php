@@ -24,7 +24,7 @@
 <div class="w3-sidebar w3-light-grey w3-bar-block" id="mySidebar" style="position:absolute; width:14%; overflow:scroll;">
 
 </div>
-<div class="sidebar_chat" id="valuesbar" style="position:absolute; right:0px; width:30%; background-color:white;  border-style:none; margin-top:0px; heigth:200px; height: 836px; overflow-y:scroll;"></div>
+<div class="sidebar_chat" id="valuesbar" style="position:absolute; right:0px; width:43.5%; background-color:#d9e6f2;  border-style:none; margin-top:0px; heigth:200px; height: 836px; overflow-y:scroll;"></div>
 
 
 <p id="testo_container">Negli esempi seguenti, clicca le parti del discorso evidenziate per modificarle con i vocabili che ritieni userebbe l'utente. A ciascuna parte evidenziata associa i dati che desideri siano restituiti come risposta.</p>
@@ -122,7 +122,7 @@ $("body").on("click",function(event){
         }
         for( var l in dataFromCall[i].properties.outputs){
           $("#showvalues").append("<div style=\"margin-left:15px\"><button class=\"buttonvalues\" id=\""+dataFromCall[i].properties.outputs[l].label+"_"+id.substring(0,(lenght-7))+"\"  > • "+dataFromCall[i].properties.outputs[l].label+"</button></div>");
-          
+
         }
 
         $("#showvalues").append("<br>");
@@ -251,7 +251,7 @@ $("body").on("click",function(event){
             $("#valuesbar").append("<div style=\"margin-left:15px;\">2</div>");
             break;
           }
-          
+
         });
         break;
 
