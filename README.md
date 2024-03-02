@@ -3,9 +3,9 @@
 
 ## About 
 
-This Laravel project was made for my Bachelor Degree's course named "Web Programming". In this project i had to build a web application which takes in upload a SQL file in upload and show its schema in a graphical way and let the user to modify it and save.
+This Laravel project was made for my Bachelor Degree's course named "Web Programming". In this project i had to build a web application which takes  a SQL file in upload and show its schema in a graphical way and let the user to modify it and save.
 Features to implement:
 -Database connection
 -SQL file re-save
-To run de application just launch the server.js file.
+To run the application just launch the server.js file.
 
